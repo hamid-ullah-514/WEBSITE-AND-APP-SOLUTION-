@@ -859,6 +859,7 @@ const DEMO_PROJECTS_DATA = {
 document.addEventListener("DOMContentLoaded", () => {
   initLanguage();
   initThemeToggle();
+  initFontToggle();
   initSpeaker();
   initCopyrightYear();
   initMobileMenu();
@@ -1092,6 +1093,63 @@ function initThemeToggle() {
       ? (currentLang === "ur" ? "ڈارک موڈ فعال ہو گیا ہے۔" : "Dark Mode activated.") 
       : (currentLang === "ur" ? "لائٹ موڈ فعال ہو گیا ہے۔" : "Light Mode activated."), 2000);
   });
+}
+
+// ----------------------------------------------------------------------------
+// 7B. URDU FONT STYLE TOGGLE (Noto Sans Arabic vs Noto Nastaliq Urdu)
+// ----------------------------------------------------------------------------
+function initFontToggle() {
+  const fontToggleBtn = document.getElementById("fontToggleBtn");
+  const fontToggleLabel = document.getElementById("fontToggleLabel");
+  const btnFontSansMobile = document.getElementById("btnFontSansMobile");
+  const btnFontNastaliqMobile = document.getElementById("btnFontNastaliqMobile");
+
+  function setUrduFont(fontStyle, showNotification = false) {
+    const validFont = fontStyle === "nastaliq" ? "nastaliq" : "sans";
+    document.documentElement.setAttribute("data-urdu-font", validFont);
+    localStorage.setItem("was-urdu-font", validFont);
+
+    // Update Topbar button label
+    if (fontToggleLabel) {
+      fontToggleLabel.textContent = validFont === "nastaliq" ? "جدید (Sans)" : "نستعلیق";
+    }
+
+    // Update Mobile Drawer buttons
+    if (btnFontSansMobile && btnFontNastaliqMobile) {
+      if (validFont === "sans") {
+        btnFontSansMobile.classList.add("active");
+        btnFontNastaliqMobile.classList.remove("active");
+      } else {
+        btnFontNastaliqMobile.classList.add("active");
+        btnFontSansMobile.classList.remove("active");
+      }
+    }
+
+    if (showNotification) {
+      const msg = validFont === "nastaliq"
+        ? (currentLang === "ur" ? "روایتی نوٹو نستعلیق خط لاگو کر دیا گیا۔" : "Traditional Nastaliq font enabled.")
+        : (currentLang === "ur" ? "جدید نوٹو سنز خط لاگو کر دیا گیا۔" : "Modern Sans font enabled.");
+      showToast(msg, 2000);
+    }
+  }
+
+  const initialFont = document.documentElement.getAttribute("data-urdu-font") || "sans";
+  setUrduFont(initialFont, false);
+
+  if (fontToggleBtn) {
+    fontToggleBtn.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-urdu-font") || "sans";
+      const next = current === "nastaliq" ? "sans" : "nastaliq";
+      setUrduFont(next, true);
+    });
+  }
+
+  if (btnFontSansMobile) {
+    btnFontSansMobile.addEventListener("click", () => setUrduFont("sans", true));
+  }
+  if (btnFontNastaliqMobile) {
+    btnFontNastaliqMobile.addEventListener("click", () => setUrduFont("nastaliq", true));
+  }
 }
 
 // ----------------------------------------------------------------------------
@@ -1521,7 +1579,7 @@ function openDemoModal(demoKey) {
 
   modalBody.innerHTML = `
     ${projectEntry.image ? `
-      <div style="width: 100%; height: 210px; border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 16px; background: #0A0F1D; border: 1px solid var(--border-color); box-shadow: 0 4px 14px rgba(0,0,0,0.25);">
+      <div style="width: 100%; height: 210px; border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 16px; background: var(--surface-color); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
         <img src="${projectEntry.image}" alt="${project.title}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
       </div>
     ` : ''}

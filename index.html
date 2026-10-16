@@ -9,7 +9,7 @@
   <meta name="description" content="Website and App Solution - دکانوں، اسکولوں، مدارس، اسلامی اداروں اور کاروباری کمپنیوں کے لیے جدید ویب سائٹس، موبائل ایپس، POS سسٹمز اور کسٹم سافٹ ویئر۔ واٹس ایپ: 03305417514">
   <meta name="keywords" content="Website and App Solution, Web Development, Mobile Apps, POS System, Inventory Management, School Management System, Madrasa Website, Islamic Apps, Quran App, Software Development Pakistan">
   <meta name="author" content="Website and App Solution">
-  <meta name="theme-color" content="#101828">
+  <meta name="theme-color" content="#FAFBF9">
   
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website">
@@ -17,15 +17,15 @@
   <meta property="og:description" content="ہم بناتے ہیں جدید ویب سائٹس، موبائل ایپلی کیشنز اور اسمارٹ بزنس مینجمنٹ سسٹمز۔">
   <meta property="og:url" content="https://websiteandappsolution.com">
   
-  <!-- Google Fonts: Gulzar, Noto Nastaliq Urdu, Noto Sans Arabic, Montserrat & Poppins -->
+  <!-- Google Fonts: Noto Nastaliq Urdu (400-700), Noto Sans Arabic (400-900), Montserrat & Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gulzar&family=Montserrat:wght@500;600;700;800;900&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Font Awesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
-  <!-- Early Initialization Script (Urdu by default, Theme persistence) -->
+  <!-- Early Initialization Script (Urdu by default, Theme persistence & Font selector) -->
   <script>
     (function() {
       // Default Language: Urdu ('ur') on first visit
@@ -36,6 +36,10 @@
       // Theme: Light by default, saved preference supported
       const savedTheme = localStorage.getItem('was-theme') || 'light';
       document.documentElement.setAttribute('data-theme', savedTheme);
+
+      // Urdu Font: 'sans' (Noto Sans Arabic) by default or 'nastaliq' (Noto Nastaliq Urdu)
+      const savedUrduFont = localStorage.getItem('was-urdu-font') || 'sans';
+      document.documentElement.setAttribute('data-urdu-font', savedUrduFont);
     })();
   </script>
 
@@ -65,6 +69,12 @@
       </div>
       
       <div class="topbar-right">
+        <!-- Urdu Font Style Toggle Button (Nastaliq / Modern Sans) -->
+        <button class="topbar-btn btn-font-toggle" id="fontToggleBtn" aria-label="Urdu Font Style" title="اردو خط تبدیل کریں (نستعلیق / جدید)">
+          <i class="fa-solid fa-pen-nib"></i>
+          <span class="ctrl-label" id="fontToggleLabel">نستعلیق</span>
+        </button>
+
         <!-- Speaker / Audio Narration Button -->
         <button class="topbar-btn btn-speaker-toggle" id="speakerToggleBtn" aria-label="Listen to Audio Introduction" title="ویب سائٹ تعارف سنیں / Listen Audio Intro">
           <i class="fa-solid fa-volume-high" id="speakerIcon"></i>
@@ -132,6 +142,14 @@
               <button type="button" class="lang-pill-btn active" id="btnSwitchUrMobile" data-lang="ur">اردو</button>
               <span class="lang-sep">|</span>
               <button type="button" class="lang-pill-btn" id="btnSwitchEnMobile" data-lang="en">English</button>
+            </div>
+          </div>
+          <div class="drawer-lang-row drawer-font-row">
+            <span class="drawer-lang-label" data-i18n="drawer_font_label">اردو خط (فونٹ):</span>
+            <div class="nav-lang-switcher nav-font-switcher">
+              <button type="button" class="lang-pill-btn active" id="btnFontSansMobile" data-font="sans">جدید (Sans)</button>
+              <span class="lang-sep">|</span>
+              <button type="button" class="lang-pill-btn" id="btnFontNastaliqMobile" data-font="nastaliq">نستعلیق</button>
             </div>
           </div>
           <a href="https://wa.me/923305417514" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">
