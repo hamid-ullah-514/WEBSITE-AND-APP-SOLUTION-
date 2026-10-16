@@ -1167,23 +1167,15 @@ function initCopyrightYear() {
 // ----------------------------------------------------------------------------
 function initMobileMenu() {
   const toggleBtn = document.getElementById("mobileToggle");
-  const navMenu = document.getElementById("navMenu");
+  const drawer = document.getElementById("mobileDrawer") || document.getElementById("navMenu");
   const overlay = document.getElementById("mobileNavOverlay");
-  const navLinks = document.querySelectorAll(".nav-link");
+  const drawerCloseBtn = document.getElementById("drawerCloseBtn");
+  const allLinks = document.querySelectorAll(".drawer-link, .nav-link");
 
-  if (!toggleBtn || !navMenu || !overlay) return;
-
-  function toggleMenu() {
-    const isActive = navMenu.classList.contains("active");
-    if (isActive) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
-  }
+  if (!toggleBtn || !drawer || !overlay) return;
 
   function openMenu() {
-    navMenu.classList.add("active");
+    drawer.classList.add("active");
     overlay.classList.add("active");
     toggleBtn.classList.add("active");
     toggleBtn.setAttribute("aria-expanded", "true");
@@ -1191,22 +1183,30 @@ function initMobileMenu() {
   }
 
   function closeMenu() {
-    navMenu.classList.remove("active");
+    drawer.classList.remove("active");
     overlay.classList.remove("active");
     toggleBtn.classList.remove("active");
     toggleBtn.setAttribute("aria-expanded", "false");
     document.body.style.overflow = "";
   }
 
+  function toggleMenu() {
+    const isActive = drawer.classList.contains("active");
+    if (isActive) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  }
+
   toggleBtn.addEventListener("click", toggleMenu);
   overlay.addEventListener("click", closeMenu);
 
-  const drawerCloseBtn = document.getElementById("drawerCloseBtn");
   if (drawerCloseBtn) {
     drawerCloseBtn.addEventListener("click", closeMenu);
   }
 
-  navLinks.forEach((link) => {
+  allLinks.forEach((link) => {
     link.addEventListener("click", closeMenu);
   });
 }

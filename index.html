@@ -112,18 +112,8 @@
         </div>
       </a>
 
-      <!-- Desktop Navigation Links -->
-      <nav class="nav-menu" id="navMenu" aria-label="Main Navigation">
-        <div class="mobile-drawer-header">
-          <div class="drawer-brand">
-            <i class="fa-solid fa-code text-primary"></i>
-            <span>Website &amp; App Solution</span>
-          </div>
-          <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close Menu">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </div>
-
+      <!-- Desktop Navigation Links (Visible on > 992px) -->
+      <nav class="desktop-nav" id="desktopNav" aria-label="Desktop Navigation">
         <ul class="nav-list">
           <li class="nav-item"><a href="#home" class="nav-link active" data-i18n="nav_home">ہوم</a></li>
           <li class="nav-item"><a href="#services" class="nav-link" data-i18n="nav_services">ہماری خدمات</a></li>
@@ -134,32 +124,6 @@
           <li class="nav-item"><a href="#faq" class="nav-link" data-i18n="nav_faq">سوالات</a></li>
           <li class="nav-item"><a href="#contact" class="nav-link" data-i18n="nav_contact">رابطہ کریں</a></li>
         </ul>
-
-        <div class="mobile-drawer-footer">
-          <div class="drawer-lang-row">
-            <span class="drawer-lang-label" data-i18n="drawer_lang_label">زبان منتخب کریں:</span>
-            <div class="nav-lang-switcher">
-              <button type="button" class="lang-pill-btn active" id="btnSwitchUrMobile" data-lang="ur">اردو</button>
-              <span class="lang-sep">|</span>
-              <button type="button" class="lang-pill-btn" id="btnSwitchEnMobile" data-lang="en">English</button>
-            </div>
-          </div>
-          <div class="drawer-lang-row drawer-font-row">
-            <span class="drawer-lang-label" data-i18n="drawer_font_label">اردو خط (فونٹ):</span>
-            <div class="nav-lang-switcher nav-font-switcher">
-              <button type="button" class="lang-pill-btn active" id="btnFontSansMobile" data-font="sans">جدید (Sans)</button>
-              <span class="lang-sep">|</span>
-              <button type="button" class="lang-pill-btn" id="btnFontNastaliqMobile" data-font="nastaliq">نستعلیق</button>
-            </div>
-          </div>
-          <a href="https://wa.me/923305417514" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">
-            <i class="fa-brands fa-whatsapp"></i>
-            <span data-i18n="nav_cta_quote">کوٹیشن حاصل کریں</span>
-          </a>
-          <div class="mobile-drawer-contact">
-            <p><i class="fa-solid fa-phone"></i> 03305417514</p>
-          </div>
-        </div>
       </nav>
 
       <!-- Header Action Group (Language Switcher, Quote CTA & Mobile Toggle) -->
@@ -185,8 +149,58 @@
     </div>
   </header>
 
-  <!-- Mobile Navigation Drawer Overlay -->
+  <!-- Mobile Navigation Backdrop Overlay -->
   <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+  <!-- Standalone Mobile Navigation Drawer (Independent Root Stacking Context) -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation Drawer">
+    <div class="mobile-drawer-header">
+      <div class="drawer-brand">
+        <i class="fa-solid fa-code text-primary"></i>
+        <span>Website &amp; App Solution</span>
+      </div>
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close Menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <ul class="mobile-drawer-list">
+      <li class="drawer-item"><a href="#home" class="drawer-link active" data-i18n="nav_home">ہوم</a></li>
+      <li class="drawer-item"><a href="#services" class="drawer-link" data-i18n="nav_services">ہماری خدمات</a></li>
+      <li class="drawer-item"><a href="#portfolio" class="drawer-link" data-i18n="nav_portfolio">پورٹ فولیو</a></li>
+      <li class="drawer-item"><a href="#why-us" class="drawer-link" data-i18n="nav_why_us">ہمیں کیوں چنیں؟</a></li>
+      <li class="drawer-item"><a href="#how-it-works" class="drawer-link" data-i18n="nav_process">طریقہ کار</a></li>
+      <li class="drawer-item"><a href="#about" class="drawer-link" data-i18n="nav_about">ہمارے متعلق</a></li>
+      <li class="drawer-item"><a href="#faq" class="drawer-link" data-i18n="nav_faq">سوالات</a></li>
+      <li class="drawer-item"><a href="#contact" class="drawer-link" data-i18n="nav_contact">رابطہ کریں</a></li>
+    </ul>
+
+    <div class="mobile-drawer-footer">
+      <div class="drawer-lang-row">
+        <span class="drawer-lang-label" data-i18n="drawer_lang_label">زبان منتخب کریں:</span>
+        <div class="nav-lang-switcher">
+          <button type="button" class="lang-pill-btn active" id="btnSwitchUrMobile" data-lang="ur">اردو</button>
+          <span class="lang-sep">|</span>
+          <button type="button" class="lang-pill-btn" id="btnSwitchEnMobile" data-lang="en">English</button>
+        </div>
+      </div>
+      <div class="drawer-lang-row drawer-font-row">
+        <span class="drawer-lang-label" data-i18n="drawer_font_label">اردو خط (فونٹ):</span>
+        <div class="nav-lang-switcher nav-font-switcher">
+          <button type="button" class="lang-pill-btn active" id="btnFontSansMobile" data-font="sans">جدید (Sans)</button>
+          <span class="lang-sep">|</span>
+          <button type="button" class="lang-pill-btn" id="btnFontNastaliqMobile" data-font="nastaliq">نستعلیق</button>
+        </div>
+      </div>
+      <a href="https://wa.me/923305417514" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span data-i18n="nav_cta_quote">کوٹیشن حاصل کریں</span>
+      </a>
+      <div class="mobile-drawer-contact">
+        <p><i class="fa-solid fa-phone"></i> 03305417514</p>
+      </div>
+    </div>
+  </aside>
 
   <!-- ============================================ -->
   <!-- HERO SECTION -->
