@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website and App Solution | ویب سائٹ، موبائل ایپس اور سافٹ ویئر ڈویلپمنٹ</title>
+  
+  <!-- SEO & Meta Tags -->
+  <meta name="description" content="Website and App Solution - دکانوں، اسکولوں، مدارس، اسلامی اداروں اور کاروباری کمپنیوں کے لیے جدید ویب سائٹس، موبائل ایپس، POS سسٹمز اور کسٹم سافٹ ویئر۔ واٹس ایپ: 03305417514">
+  <meta name="keywords" content="Website and App Solution, Web Development, Mobile Apps, POS System, Inventory Management, School Management System, Madrasa Website, Islamic Apps, Quran App, Software Development Pakistan">
+  <meta name="author" content="Website and App Solution">
+  <meta name="theme-color" content="#101828">
+  
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Website and App Solution | پروفیشنل ویب اور ایپ ڈویلپمنٹ">
+  <meta property="og:description" content="ہم بناتے ہیں جدید ویب سائٹس، موبائل ایپلی کیشنز اور اسمارٹ بزنس مینجمنٹ سسٹمز۔">
+  <meta property="og:url" content="https://websiteandappsolution.com">
+  
+  <!-- Google Fonts: Gulzar, Noto Nastaliq Urdu, Noto Sans Arabic, Montserrat & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gulzar&family=Montserrat:wght@500;600;700;800;900&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Early Initialization Script (Urdu by default, Theme persistence) -->
+  <script>
+    (function() {
+      // Default Language: Urdu ('ur') on first visit
+      const savedLang = localStorage.getItem('was-lang') || 'ur';
+      document.documentElement.setAttribute('lang', savedLang);
+      document.documentElement.setAttribute('dir', savedLang === 'ur' ? 'rtl' : 'ltr');
+
+      // Theme: Light by default, saved preference supported
+      const savedTheme = localStorage.getItem('was-theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================ -->
+  <!-- 1. TOP BAR -->
+  <!-- ============================================ -->
+  <div class="site-topbar">
+    <div class="container topbar-container">
+      <div class="topbar-left">
+        <a href="https://wa.me/923305417514" target="_blank" rel="noopener noreferrer" class="topbar-item topbar-wa">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span class="phone-ltr">03305417514</span>
+        </a>
+        <div class="topbar-item topbar-hours">
+          <i class="fa-regular fa-clock"></i>
+          <span data-i18n="topbar_hours">پیر تا ہفتہ: 9:00 AM تا 9:00 PM</span>
+        </div>
+        <div class="topbar-item topbar-loc">
+          <i class="fa-solid fa-location-dot"></i>
+          <span data-i18n="topbar_loc">آن لائن سروسز برائے پاکستان و دنیا بھر</span>
+        </div>
+      </div>
+      
+      <div class="topbar-right">
+        <!-- Speaker / Audio Narration Button -->
+        <button class="topbar-btn btn-speaker-toggle" id="speakerToggleBtn" aria-label="Listen to Audio Introduction" title="ویب سائٹ تعارف سنیں / Listen Audio Intro">
+          <i class="fa-solid fa-volume-high" id="speakerIcon"></i>
+          <span class="ctrl-label" id="speakerLabel">سنیں</span>
+          <span class="sound-wave" id="soundWave">
+            <span></span><span></span><span></span>
+          </span>
+        </button>
+
+        <!-- Theme Mode Toggle Button (Light / Dark) -->
+        <button class="topbar-btn btn-theme-toggle" id="themeToggleBtn" aria-label="Switch Theme" title="تھیم تبدیل کریں">
+          <i class="fa-solid fa-moon" id="themeIcon"></i>
+          <span class="ctrl-label" id="themeLabel">ڈارک</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- 2. MAIN HEADER & NAVIGATION -->
+  <!-- ============================================ -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      
+      <!-- Brand Logo (Single-Line Guaranteed, No Awkward Breaks) -->
+      <a href="#home" class="brand-logo" aria-label="Website and App Solution">
+        <div class="logo-icon-box">
+          <i class="fa-solid fa-code"></i>
+        </div>
+        <div class="logo-text">
+          <div class="logo-title-row">
+            <span class="logo-title" data-i18n="brand_title_html">ویب سائٹ اینڈ ایپ <span class="gradient-text">سولیوشن</span></span>
+          </div>
+          <span class="logo-sub">WEBSITE &amp; APP SOLUTION</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-menu" id="navMenu" aria-label="Main Navigation">
+        <div class="mobile-drawer-header">
+          <div class="drawer-brand">
+            <i class="fa-solid fa-code text-primary"></i>
+            <span>Website &amp; App Solution</span>
+          </div>
+          <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close Menu">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#home" class="nav-link active" data-i18n="nav_home">ہوم</a></li>
+          <li class="nav-item"><a href="#services" class="nav-link" data-i18n="nav_services">ہماری خدمات</a></li>
+          <li class="nav-item"><a href="#portfolio" class="nav-link" data-i18n="nav_portfolio">پورٹ فولیو</a></li>
+          <li class="nav-item"><a href="#why-us" class="nav-link" data-i18n="nav_why_us">ہمیں کیوں چنیں؟</a></li>
+          <li class="nav-item"><a href="#how-it-works" class="nav-link" data-i18n="nav_process">طریقہ کار</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link" data-i18n="nav_about">ہمارے متعلق</a></li>
+          <li class="nav-item"><a href="#faq" class="nav-link" data-i18n="nav_faq">سوالات</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link" data-i18n="nav_contact">رابطہ کریں</a></li>
+        </ul>
+
+        <div class="mobile-drawer-footer">
+          <div class="drawer-lang-row">
+            <span class="drawer-lang-label" data-i18n="drawer_lang_label">زبان منتخب کریں:</span>
+            <div class="nav-lang-switcher">
+              <button type="button" class="lang-pill-btn active" id="btnSwitchUrMobile" data-lang="ur">اردو</button>
+              <span class="lang-sep">|</span>
+              <button type="button" class="lang-pill-btn" id="btnSwitchEnMobile" data-lang="en">English</button>
+            </div>
+          </div>
+          <a href="https://wa.me/923305417514" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span data-i18n="nav_cta_quote">کوٹیشن حاصل کریں</span>
+          </a>
+          <div class="mobile-drawer-contact">
+            <p><i class="fa-solid fa-phone"></i> 03305417514</p>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Header Action Group (Language Switcher, Quote CTA & Mobile Toggle) -->
+      <div class="header-cta-group">
+        <!-- Prominent Language Switcher in Navigation Bar: اردو | English -->
+        <div class="nav-lang-switcher" id="navLangSwitcher" aria-label="Language Switcher">
+          <button type="button" class="lang-pill-btn active" id="btnSwitchUr" data-lang="ur">اردو</button>
+          <span class="lang-sep">|</span>
+          <button type="button" class="lang-pill-btn" id="btnSwitchEn" data-lang="en">English</button>
+        </div>
+
+        <a href="https://wa.me/923305417514" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm nav-cta-btn">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span data-i18n="nav_cta_quote">کوٹیشن حاصل کریں</span>
+        </a>
+        
+        <!-- Mobile Drawer Toggle Button -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+  <!-- ============================================ -->
+  <!-- HERO SECTION -->
+  <!-- ============================================ -->
+  <section class="hero-section" id="home">
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    <div class="container hero-container">
+      
+      <!-- Hero Text Column -->
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span class="badge-text" data-i18n="hero_badge">⚡ جدید ویب و موبائل سافٹ ویئر اسٹوڈیو</span>
+        </div>
+        
+        <h1 class="hero-headline" data-i18n="hero_headline">
+          ہم بناتے ہیں <span class="gradient-text">ویب سائٹس</span>، <span class="gradient-text-alt">موبائل ایپس</span> اور اسمارٹ بزنس سسٹمز
+        </h1>
+        
+        <p class="hero-description" data-i18n="hero_description">
+          کاروباری اداروں، دکانوں، اسکولوں، مدارس، اسلامی اداروں اور تنظیموں کی ترقی کے لیے جدید ڈیجیٹل حل۔
+        </p>
+
+        <!-- Hero Actions -->
+        <div class="hero-cta-group">
+          <a href="#services" class="btn btn-primary">
+            <span data-i18n="hero_btn_services">ہماری خدمات دیکھیں</span>
+            <i class="fa-solid fa-arrow-down-long"></i>
+          </a>
+          <a href="https://wa.me/923305417514" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span data-i18n="hero_btn_whatsapp">واٹس ایپ پر رابطہ کریں</span>
+          </a>
+          <button class="btn btn-audio-hero" id="heroSpeakerBtn" aria-label="Play Audio Intro">
+            <i class="fa-solid fa-circle-play" id="heroSpeakerIcon"></i>
+            <span data-i18n="hero_btn_listen">آڈیو تعارف سنیں</span>
+          </button>
+        </div>
+
+        <!-- Trust Highlights Strip -->
+        <div class="hero-trust-strip">
+          <div class="trust-item">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <span data-i18n="trust_mobile">100% موبائل ریسپانسو</span>
+          </div>
+          <div class="trust-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span data-i18n="trust_code">صاف و جدید کوڈنگ</span>
+          </div>
+          <div class="trust-item">
+            <i class="fa-solid fa-comments"></i>
+            <span data-i18n="trust_support">براہِ راست واٹس ایپ سپورٹ</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Showcase Slider -->
+      <div class="hero-visual">
+        <div class="hero-card-slider" id="heroSlider">
+          
+          <!-- Slide 1: Web Development -->
+          <div class="slider-slide active" data-slide="0">
+            <div class="slide-mockup">
+              <div class="mockup-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="mockup-address">https://yourbusiness.com</span>
+              </div>
+              <div class="mockup-body">
+                <div class="mockup-hero-media">
+                  <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Responsive Business Website on Laptop" class="mockup-img">
+                  <div class="mockup-media-badge"><i class="fa-solid fa-laptop"></i> <span data-i18n="slide1_device">لیپ ٹاپ و ڈیسک ٹاپ ریڈی</span></div>
+                </div>
+                <div class="mockup-banner purple-gradient">
+                  <span class="pill" data-i18n="slide1_tag">ویب سائٹ انجینئرنگ</span>
+                  <h3 data-i18n="slide1_title">تیز رفتار کارپوریٹ ویب سائٹس</h3>
+                  <p data-i18n="slide1_desc">کاروباری اداروں، ای کامرس اور اسلامی تنظیموں کے لیے بہترین حل۔</p>
+                </div>
+                <div class="mockup-grid">
+                  <div class="grid-card">
+                    <i class="fa-solid fa-bolt"></i>
+                    <h4 data-i18n="slide1_feat1_title">الٹرا فاسٹ اسپیڈ</h4>
+                    <p data-i18n="slide1_feat1_desc">موبائل اور کمپیوٹر پر بجلی جیسی تیز رفتاری۔</p>
+                  </div>
+                  <div class="grid-card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h4 data-i18n="slide1_feat2_title">گوگل سرچ آپٹیمائزڈ</h4>
+                    <p data-i18n="slide1_feat2_desc">بہترین رینکنگ اور ایس ای او فرینڈلی۔</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide-caption">
+              <span class="caption-tag" data-i18n="slide1_caption_tag">خاص مہارت 01</span>
+              <h4 data-i18n="slide1_caption_title">کاروباری و تنظیمی ویب پلیٹ فارمز</h4>
+            </div>
+          </div>
+
+          <!-- Slide 2: Mobile Apps -->
+          <div class="slider-slide" data-slide="1">
+            <div class="slide-mockup mobile-focus">
+              <div class="mockup-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="mockup-address">Mobile Application Engine</span>
+              </div>
+              <div class="mockup-body">
+                <div class="mockup-hero-media">
+                  <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80" alt="Mobile App Interface on Smartphone" class="mockup-img">
+                  <div class="mockup-media-badge"><i class="fa-solid fa-mobile-screen"></i> <span data-i18n="slide2_device">اینڈرائیڈ و آئی او ایس ایپس</span></div>
+                </div>
+                <div class="mockup-banner cyan-gradient">
+                  <span class="pill" data-i18n="slide2_tag">موبائل ایپس</span>
+                  <h3 data-i18n="slide2_title">اینڈرائیڈ اور آئی او ایس ایپس</h3>
+                  <p data-i18n="slide2_desc">شاندار یوزر انٹرفیس، آف لائن سپورٹ اور اسلامی قرآنی ایپس۔</p>
+                </div>
+                <div class="mockup-grid">
+                  <div class="grid-card">
+                    <i class="fa-solid fa-book-quran"></i>
+                    <h4 data-i18n="slide2_feat1_title">اسلامی ایپلی کیشنز</h4>
+                    <p data-i18n="slide2_feat1_desc">قرآن پاک، نماز کے اوقات اور مدرسہ پورٹل۔</p>
+                  </div>
+                  <div class="grid-card">
+                    <i class="fa-solid fa-bell"></i>
+                    <h4 data-i18n="slide2_feat2_title">فوری الرٹس</h4>
+                    <p data-i18n="slide2_feat2_desc">پش نوٹیفکیشنز اور لائیو اپ ڈیٹس۔</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide-caption">
+              <span class="caption-tag" data-i18n="slide2_caption_tag">خاص مہارت 02</span>
+              <h4 data-i18n="slide2_caption_title">کراس پلیٹ فارم موبائل ایپ ڈویلپمنٹ</h4>
+            </div>
+          </div>
+
+          <!-- Slide 3: Management POS -->
+          <div class="slider-slide" data-slide="2">
+            <div class="slide-mockup system-focus">
+              <div class="mockup-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="mockup-address">Management Dashboard POS</span>
+              </div>
+              <div class="mockup-body">
+                <div class="mockup-hero-media">
+                  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Management Dashboard POS on Screen" class="mockup-img">
+                  <div class="mockup-media-badge"><i class="fa-solid fa-cash-register"></i> <span data-i18n="slide3_device">شاپ بلنگ اور ERP سسٹم</span></div>
+                </div>
+                <div class="mockup-banner emerald-gradient">
+                  <span class="pill" data-i18n="slide3_tag">بزنس آٹومیشن</span>
+                  <h3 data-i18n="slide3_title">دکان POS اور اسکول سسٹمز</h3>
+                  <p data-i18n="slide3_desc">اسٹاک مینجمنٹ، فوری بل پرنٹنگ، فیس چالان اور حاضری رجسٹر۔</p>
+                </div>
+                <div class="mockup-grid">
+                  <div class="grid-card">
+                    <i class="fa-solid fa-barcode"></i>
+                    <h4 data-i18n="slide3_feat1_title">شاپ بلنگ و کھاتہ</h4>
+                    <p data-i18n="slide3_feat1_desc">فوری سیلز بل اور بارکوڈ اسکیننگ۔</p>
+                  </div>
+                  <div class="grid-card">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <h4 data-i18n="slide3_feat2_title">اسکول و مدرسہ ERP</h4>
+                    <p data-i18n="slide3_feat2_desc">طلباء داخلہ، فیس وصولی اور رزلٹ شیٹ۔</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide-caption">
+              <span class="caption-tag" data-i18n="slide3_caption_tag">خاص مہارت 03</span>
+              <h4 data-i18n="slide3_caption_title">مینجمنٹ ڈیش بورڈز اور POS سسٹمز</h4>
+            </div>
+          </div>
+
+          <!-- Slider Controls -->
+          <div class="slider-controls">
+            <button class="slider-btn prev" id="sliderPrev" aria-label="Previous Slide">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <div class="slider-dots" id="sliderDots">
+              <button class="dot-btn active" data-index="0" aria-label="Go to slide 1"></button>
+              <button class="dot-btn" data-index="1" aria-label="Go to slide 2"></button>
+              <button class="dot-btn" data-index="2" aria-label="Go to slide 3"></button>
+            </div>
+            <button class="slider-btn next" id="sliderNext" aria-label="Next Slide">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- HIGHLIGHTS / PILLARS BANNER -->
+  <!-- ============================================ -->
+  <section class="pillars-section">
+    <div class="container">
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon indigo"><i class="fa-solid fa-layer-group"></i></div>
+          <div class="pillar-text">
+            <h3 data-i18n="pillar1_title">10+ جامع حل</h3>
+            <p data-i18n="pillar1_desc">کارپوریٹ ویب سائٹس سے لے کر دکان POS اور دینی پورٹلز تک۔</p>
+          </div>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon cyan"><i class="fa-solid fa-mobile-screen"></i></div>
+          <div class="pillar-text">
+            <h3 data-i18n="pillar2_title">ہر اسکرین پر مکمل فِٹ</h3>
+            <p data-i18n="pillar2_desc">اسمارٹ فون، ٹیبلٹ اور لیپ ٹاپ پر پکسل پرفیکٹ ڈسپلے۔</p>
+          </div>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon green"><i class="fa-brands fa-whatsapp"></i></div>
+          <div class="pillar-text">
+            <h3 data-i18n="pillar3_title">فوری واٹس ایپ رابطہ</h3>
+            <p data-i18n="pillar3_desc">بغیر پیچیدہ لاگ ان کے سیدھا واٹس ایپ پر آرڈر اور بات چیت۔</p>
+          </div>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon amber"><i class="fa-solid fa-headset"></i></div>
+          <div class="pillar-text">
+            <h3 data-i18n="pillar4_title">مستقل سپورٹ و رہنمائی</h3>
+            <p data-i18n="pillar4_desc">ویب سائٹ لانچ کے بعد بھی اپ ڈیٹس اور دیکھ بھال کی سہولت۔</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- ABOUT US SECTION -->
+  <!-- ============================================ -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        
+        <!-- Left: Code Graphic Visual Card -->
+        <div class="about-visual">
+          <div class="about-badge-card">
+            <div class="badge-icon"><i class="fa-solid fa-cube"></i></div>
+            <div class="badge-content">
+              <h4 data-i18n="about_badge_title">جدید ترین معیارات</h4>
+              <p data-i18n="about_badge_desc">HTML5، CSS3 اور جاوا اسکرپٹ پر مبنی</p>
+            </div>
+          </div>
+          <div class="about-card-main">
+            <div class="code-header">
+              <span class="code-title"><i class="fa-solid fa-terminal"></i> solutions.config.js</span>
+            </div>
+            <pre class="code-block"><code><span class="code-keyword">const</span> <span class="code-var">websiteAppSolution</span> = {
+  <span class="code-prop">name</span>: <span class="code-str">"Website and App Solution"</span>,
+  <span class="code-prop">focus</span>: [<span class="code-str">"Businesses"</span>, <span class="code-str">"Shops"</span>, <span class="code-str">"Schools"</span>, <span class="code-str">"Madrasas"</span>],
+  <span class="code-prop">whatsapp</span>: <span class="code-str">"03305417514"</span>,
+  <span class="code-prop">languages</span>: [<span class="code-str">"Urdu"</span>, <span class="code-str">"English"</span>],
+  <span class="code-prop">readyToScale</span>: <span class="code-bool">true</span>
+};</code></pre>
+            <div class="card-footer-stats">
+              <div class="stat-pill"><i class="fa-solid fa-check-circle"></i> <span data-i18n="about_pill1">صاف ستھرا کوڈ</span></div>
+              <div class="stat-pill"><i class="fa-solid fa-check-circle"></i> <span data-i18n="about_pill2">مفت ہوسٹنگ ریڈی</span></div>
+              <div class="stat-pill"><i class="fa-solid fa-check-circle"></i> <span data-i18n="about_pill3">اردو اور انگلش سپورٹ</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Text Content -->
+        <div class="about-text-content">
+          <div class="section-tag">
+            <i class="fa-solid fa-circle-info"></i>
+            <span data-i18n="about_tag">ہمارے بارے میں</span>
+          </div>
+          <h2 class="section-heading" data-i18n="about_heading">
+            آپ کے کاروبار اور ادارے کو دیں <span class="gradient-text">جدید ڈیجیٹل شناخت</span>
+          </h2>
+          <p class="section-description" data-i18n="about_lead">
+            <strong>Website and App Solution</strong> کا مشن ہر دکاندار، تاجر، اسکول، اکیڈمی اور دینی ادارے کو سستی، معیاری اور آسان ٹیکنالوجی فراہم کرنا ہے۔
+          </p>
+          <p class="about-body-text" data-i18n="about_body">
+            چاہے آپ کو دکان کے لیے بلنگ سسٹم چاہیے، مدرسے کے لیے آن لائن داخلہ اور عطیات کا پورٹل درکار ہو، یا اپنے کاروبار کی شاندار ویب سائٹ بنوانی ہو؛ ہم پرکشش ڈیزائن اور پائیدار سافٹ ویئر کے ساتھ آپ کے خوابوں کو حقیقت بناتے ہیں۔
+          </p>
+
+          <div class="about-features-list">
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+              <div class="feature-info">
+                <h4 data-i18n="about_f1_title">حقیقی ضروریات کے مطابق آسان انٹرفیس</h4>
+                <p data-i18n="about_f1_desc">ہم ایسے سسٹمز بناتے ہیں جنہیں کوئی بھی ملازم یا استاد آسانی سے بغیر کسی مشکل کے چلا سکے۔</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+              <div class="feature-info">
+                <h4 data-i18n="about_f2_title">براہِ راست ڈویلپر سے رابطہ</h4>
+                <p data-i18n="about_f2_desc">واٹس ایپ <strong>03305417514</strong> پر ہمہ وقت بروقت جواب اور شفاف بات چیت۔</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+              <div class="feature-info">
+                <h4 data-i18n="about_f3_title">شفاف اور حقیقت پسندانہ کام</h4>
+                <p data-i18n="about_f3_desc">کوئی غیر حقیقی دعویٰ نہیں، ہم کام کے معیار، لاگت اور وقت کی مکمل شفافیت پر یقین رکھتے ہیں۔</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-action">
+            <a href="#contact" class="btn btn-outline">
+              <span data-i18n="about_btn">اپنے پروجیکٹ پر بات کریں</span>
+              <i class="fa-solid fa-arrow-left"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- OUR SERVICES (10 SPECIFIC CARDS) -->
+  <!-- ============================================ -->
+  <section class="services-section" id="services">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <div class="section-header text-center">
+        <div class="section-tag">
+          <i class="fa-solid fa-laptop-code"></i>
+          <span data-i18n="services_tag">ہماری مکمل خدمات</span>
+        </div>
+        <h2 class="section-heading" data-i18n="services_heading">
+          ہر کاروبار اور ادارے کے لیے <span class="gradient-text">10 بہترین ڈیجیٹل سروسز</span>
+        </h2>
+        <p class="section-description centered" data-i18n="services_desc">
+          اپنی پسند کی سروس چنیں اور ایک کلک پر واٹس ایپ سے کوٹیشن (قیمت کی معلومات) حاصل کریں۔
+        </p>
+      </div>
+
+      <!-- Services Grid: 10 Cards -->
+      <div class="services-grid">
+
+        <!-- Service 1: Business Website Development -->
+        <div class="service-card card-elevated" data-service-id="business-website">
+          <div class="service-media-header">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Business Website Development Preview" loading="lazy" class="service-media-img">
+            <div class="service-media-overlay">
+              <span class="service-badge" data-i18n="srv1_badge">ویب سائٹ</span>
+              <span class="device-tag"><i class="fa-solid fa-laptop"></i> <span data-i18n="tag_laptop">لیپ ٹاپ و کمپیوٹر</span></span>
+            </div>
+          </div>
+          <div class="service-card-body">
+            <div class="service-header-compact">
+              <div class="service-icon-box purple">
+                <i class="fa-solid fa-globe"></i>
+              </div>
+              <h3 class="service-title" data-i18n="srv1_title">بزنس ویب سائٹ ڈویلپمنٹ</h3>
+            </div>
+            <p class="service-desc" data-i18n="srv1_desc">
+              کاروباری اور کمپنیوں کی باوقار ویب سائٹس جو گاہکوں کا اعتماد بڑھائیں، آپ کی سروسز دکھائیں اور سیلز میں اضافہ کریں۔
+            </p>
+            <ul class="service-features">
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv1_f1">موبائل اور کمپیوٹر پر تیز رفتار اور خوبصورت</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv1_f2">گوگل سرچ انجن پر نظر آنے کی صلاحیت (SEO)</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv1_f3">واٹس ایپ بٹن کے ساتھ فوری گاہک رابطہ</span></li>
+            </ul>
+            <div class="service-footer">
+              <button class="btn btn-card-quote" onclick="selectServiceForQuote('بزنس ویب سائٹ ڈویلپمنٹ / Business Website Development')">
+                <span data-i18n="btn_quote">کوٹیشن حاصل کریں</span>
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 2: Mobile Application Development -->
+        <div class="service-card card-elevated" data-service-id="mobile-apps">
+          <div class="service-media-header">
+            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80" alt="Mobile Application Development Preview" loading="lazy" class="service-media-img">
+            <div class="service-media-overlay">
+              <span class="service-badge" data-i18n="srv2_badge">موبائل ایپ</span>
+              <span class="device-tag"><i class="fa-solid fa-mobile-screen"></i> <span data-i18n="tag_mobile">موبائل و ٹیبلٹ</span></span>
+            </div>
+          </div>
+          <div class="service-card-body">
+            <div class="service-header-compact">
+              <div class="service-icon-box cyan">
+                <i class="fa-solid fa-mobile-screen"></i>
+              </div>
+              <h3 class="service-title" data-i18n="srv2_title">موبائل ایپلیکیشن ڈویلپمنٹ</h3>
+            </div>
+            <p class="service-desc" data-i18n="srv2_desc">
+              اینڈرائیڈ اور آئی فون کے لیے جدید اور تیز رفتار ایپس، جن کا انٹرفیس چلانے میں نہایت آسان اور پرکشش ہو۔
+            </p>
+            <ul class="service-features">
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv2_f1">جدید اور ہموار یوزر انٹرفیس (UI/UX)</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv2_f2">آف لائن کام کرنے کی سہولت</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv2_f3">گوگل پلے اسٹور پر اپ لوڈ کے لیے تیار</span></li>
+            </ul>
+            <div class="service-footer">
+              <button class="btn btn-card-quote" onclick="selectServiceForQuote('موبائل ایپلیکیشن ڈویلپمنٹ / Mobile Application Development')">
+                <span data-i18n="btn_quote">کوٹیشن حاصل کریں</span>
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 3: E-commerce Websites -->
+        <div class="service-card card-elevated" data-service-id="ecommerce-websites">
+          <div class="service-media-header">
+            <img src="https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=800&q=80" alt="E-commerce Online Shopping Store Preview" loading="lazy" class="service-media-img">
+            <div class="service-media-overlay">
+              <span class="service-badge" data-i18n="srv3_badge">ای کامرس</span>
+              <span class="device-tag"><i class="fa-solid fa-cart-shopping"></i> <span data-i18n="tag_ecommerce">آن لائن شاپنگ</span></span>
+            </div>
+          </div>
+          <div class="service-card-body">
+            <div class="service-header-compact">
+              <div class="service-icon-box emerald">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+              <h3 class="service-title" data-i18n="srv3_title">ای کامرس آن لائن شاپنگ اسٹور</h3>
+            </div>
+            <p class="service-desc" data-i18n="srv3_desc">
+              خوبصورت پراڈکٹ کیٹلاگ، شاپنگ کارٹ اور واٹس ایپ پر ایک کلک سے آرڈر موصول کرنے کا مکمل آن لائن دکان سیٹ اپ۔
+            </p>
+            <ul class="service-features">
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv3_f1">پراڈکٹ کیٹیگریز اور سرچ فلٹر</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv3_f2">واٹس ایپ پر فوری آرڈر بکنگ میسج</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv3_f3">موبائل پر شاپنگ کا تیز ترین تجربہ</span></li>
+            </ul>
+            <div class="service-footer">
+              <button class="btn btn-card-quote" onclick="selectServiceForQuote('ای کامرس ویب سائٹ / E-commerce Websites')">
+                <span data-i18n="btn_quote">کوٹیشن حاصل کریں</span>
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 4: Shop Management & POS Systems -->
+        <div class="service-card card-elevated" data-service-id="shop-pos">
+          <div class="service-media-header">
+            <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=800&q=80" alt="Shop Management and POS Systems Preview" loading="lazy" class="service-media-img">
+            <div class="service-media-overlay">
+              <span class="service-badge" data-i18n="srv4_badge">ریٹیل و دکان</span>
+              <span class="device-tag"><i class="fa-solid fa-cash-register"></i> <span data-i18n="tag_pos">کاؤنٹر بلنگ POS</span></span>
+            </div>
+          </div>
+          <div class="service-card-body">
+            <div class="service-header-compact">
+              <div class="service-icon-box amber">
+                <i class="fa-solid fa-cash-register"></i>
+              </div>
+              <h3 class="service-title" data-i18n="srv4_title">دکان مینجمنٹ اور POS سسٹم</h3>
+            </div>
+            <p class="service-desc" data-i18n="srv4_desc">
+              جنرل اسٹورز، ہارڈویئر، کلاتھ مارکیٹ اور ریٹیل شاپس کے لیے کیشیئر کاؤنٹر سافٹ ویئر، بلنگ اور گاہک کھاتہ بک۔
+            </p>
+            <ul class="service-features">
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv4_f1">فوری بل پرنٹنگ اور تھرمل پرنٹر سپورٹ</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv4_f2">گاہک کا ادھار کھاتہ اور بیلنس ٹریکنگ</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv4_f3">روزانہ کی کمائی، فروخت اور نفع نقصان رپورٹ</span></li>
+            </ul>
+            <div class="service-footer">
+              <button class="btn btn-card-quote" onclick="selectServiceForQuote('دکان مینجمنٹ اور POS سسٹم / Shop Management and POS Systems')">
+                <span data-i18n="btn_quote">کوٹیشن حاصل کریں</span>
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 5: Inventory & Stock Management -->
+        <div class="service-card card-elevated" data-service-id="inventory-management">
+          <div class="service-media-header">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Inventory and Stock Management Systems Preview" loading="lazy" class="service-media-img">
+            <div class="service-media-overlay">
+              <span class="service-badge" data-i18n="srv5_badge">انوینٹری</span>
+              <span class="device-tag"><i class="fa-solid fa-boxes-stacked"></i> <span data-i18n="tag_inventory">اسٹاک گودام سسٹم</span></span>
+            </div>
+          </div>
+          <div class="service-card-body">
+            <div class="service-header-compact">
+              <div class="service-icon-box indigo">
+                <i class="fa-solid fa-boxes-stacked"></i>
+              </div>
+              <h3 class="service-title" data-i18n="srv5_title">انوینٹری اور اسٹاک مینجمنٹ سسٹم</h3>
+            </div>
+            <p class="service-desc" data-i18n="srv5_desc">
+              گودام اور دکان میں رکھے ہوئے ہر سامان کی درست تعداد، کم مال پر خودکار الرٹ اور سپلائرز کی مکمل تفصیل۔
+            </p>
+            <ul class="service-features">
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv5_f1">ریئل ٹائم اسٹاک گنتی اور بارکوڈ اسکیننگ</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv5_f2">سامان ختم ہونے سے پہلے الرٹ کا نوٹیفکیشن</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv5_f3">سپلائر خریداری ریکارڈ اور بل واؤچر</span></li>
+            </ul>
+            <div class="service-footer">
+              <button class="btn btn-card-quote" onclick="selectServiceForQuote('انوینٹری اور اسٹاک مینجمنٹ / Inventory and Stock Management Systems')">
+                <span data-i18n="btn_quote">کوٹیشن حاصل کریں</span>
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 6: School and Academy Management Systems -->
+        <div class="service-card card-elevated" data-service-id="school-management">
+          <div class="service-media-header">
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" alt="School and Academy Management Systems Preview" loading="lazy" class="service-media-img">
+            <div class="service-media-overlay">
+              <span class="service-badge" data-i18n="srv6_badge">تعلیم</span>
+              <span class="device-tag"><i class="fa-solid fa-graduation-cap"></i> <span data-i18n="tag_school">اسکول و اکیڈمی ERP</span></span>
+            </div>
+          </div>
+          <div class="service-card-body">
+            <div class="service-header-compact">
+              <div class="service-icon-box blue">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <h3 class="service-title" data-i18n="srv6_title">اسکول اور اکیڈمی مینجمنٹ سسٹم</h3>
+            </div>
+            <p class="service-desc" data-i18n="srv6_desc">
+              پرائیویٹ اسکولوں اور اکیڈمیز کے لیے آل ان ون پورٹل؛ طلباء کا داخلہ، ماہانہ فیس چالان، حاضری اور رزلٹ کارڈز۔
+            </p>
+            <ul class="service-features">
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv6_f1">طلباء رجسٹریشن اور کلاس وائز ریکارڈ</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv6_f2">ماہانہ فیس چالان خودکار پرنٹ اور بقایا جات</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv6_f3">امتحانات کے رزلٹ کارڈز اور حاضری رجسٹر</span></li>
+            </ul>
+            <div class="service-footer">
+              <button class="btn btn-card-quote" onclick="selectServiceForQuote('اسکول مینجمنٹ سسٹم / School and Academy Management Systems')">
+                <span data-i18n="btn_quote">کوٹیشن حاصل کریں</span>
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 7: Madrasa and Islamic Institution Websites -->
+        <div class="service-card card-elevated" data-service-id="madrasa-websites">
+          <div class="service-media-header">
+            <img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&w=800&q=80" alt="Madrasa and Islamic Institution Websites Preview" loading="lazy" class="service-media-img">
+            <div class="service-media-overlay">
+              <span class="service-badge" data-i18n="srv7_badge">دینی ادارہ</span>
+              <span class="device-tag"><i class="fa-solid fa-mosque"></i> <span data-i18n="tag_madrasa">مدرسہ و جامعہ پورٹل</span></span>
+            </div>
+          </div>
+          <div class="service-card-body">
+            <div class="service-header-compact">
+              <div class="service-icon-box green">
+                <i class="fa-solid fa-mosque"></i>
+              </div>
+              <h3 class="service-title" data-i18n="srv7_title">مدرسہ اور اسلامی ادارے کی ویب سائٹ</h3>
+            </div>
+            <p class="service-desc" data-i18n="srv7_desc">
+              جامعات، دارالعلوم، مساجد اور فلاحی اداروں کے لیے پروقار ویب سائٹ، شعبہ جات، نصاب تعلیم، آن لائن داخلہ اور زکوٰۃ/صدقات پورٹل۔
+            </p>
+            <ul class="service-features">
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv7_f1">حفظ، ناظرہ و درسِ نظامی نصاب اور اساتذہ کا تعارف</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv7_f2">آن لائن داخلہ فارم اور سالانہ نتائج</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv7_f3">زکوٰۃ و صدقات عطیات بینک اکاؤنٹ تفصیلات</span></li>
+            </ul>
+            <div class="service-footer">
+              <button class="btn btn-card-quote" onclick="selectServiceForQuote('مدرسہ ویب سائٹ / Madrasa and Islamic Institution Websites')">
+                <span data-i18n="btn_quote">کوٹیشن حاصل کریں</span>
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 8: Quran and Islamic Applications -->
+        <div class="service-card card-elevated" data-service-id="quran-apps">
+          <div class="service-media-header">
+            <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=800&q=80" alt="Quran and Islamic Applications Preview" loading="lazy" class="service-media-img">
+            <div class="service-media-overlay">
+              <span class="service-badge" data-i18n="srv8_badge">اسلامی ایپ</span>
+              <span class="device-tag"><i class="fa-solid fa-book-quran"></i> <span data-i18n="tag_quran">قرآن و اذکار ایپ</span></span>
+            </div>
+          </div>
+          <div class="service-card-body">
+            <div class="service-header-compact">
+              <div class="service-icon-box teal">
+                <i class="fa-solid fa-book-quran"></i>
+              </div>
+              <h3 class="service-title" data-i18n="srv8_title">قرآنی اور اسلامی ایپلی کیشنز</h3>
+            </div>
+            <p class="service-desc" data-i18n="srv8_desc">
+              موبائل کے لیے اسلامی ایپس جن میں واضح عربی رسم الخط، اردو و انگریزی ترجمہ، تلاوت آڈیو، نماز کے اوقات اور قبلہ رخ شامل ہوں۔
+            </p>
+            <ul class="service-features">
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv8_f1">بہترین عربی فونٹس اور معتبر تراجم</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv8_f2">نماز کے اوقات کا خودکار الرٹ و الارم</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv8_f3">ڈیجیٹل تسبیح کاؤنٹر اور مسنون دعائیں</span></li>
+            </ul>
+            <div class="service-footer">
+              <button class="btn btn-card-quote" onclick="selectServiceForQuote('قرآنی اور اسلامی ایپس / Quran and Islamic Applications')">
+                <span data-i18n="btn_quote">کوٹیشن حاصل کریں</span>
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 9: Custom Software Development -->
+        <div class="service-card card-elevated" data-service-id="custom-software">
+          <div class="service-media-header">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Custom Software Development Preview" loading="lazy" class="service-media-img">
+            <div class="service-media-overlay">
+              <span class="service-badge" data-i18n="srv9_badge">کسٹم حل</span>
+              <span class="device-tag"><i class="fa-solid fa-server"></i> <span data-i18n="tag_custom">کسٹم بزنس سافٹ ویئر</span></span>
+            </div>
+          </div>
+          <div class="service-card-body">
+            <div class="service-header-compact">
+              <div class="service-icon-box violet">
+                <i class="fa-solid fa-sliders"></i>
+              </div>
+              <h3 class="service-title" data-i18n="srv9_title">کسٹم سافٹ ویئر ڈویلپمنٹ</h3>
+            </div>
+            <p class="service-desc" data-i18n="srv9_desc">
+              اگر آپ کا کام عام سافٹ ویئرز میں فِٹ نہیں بیٹھتا تو ہم آپ کی مکمل رہنمائی کے ساتھ خاص آپ کے طریقے کے مطابق نیا سافٹ ویئر تیار کرتے ہیں۔
+            </p>
+            <ul class="service-features">
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv9_f1">آپ کے طریقہ کار کے مطابق ڈیٹا بیس اور لاجک</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv9_f2">ایڈمن اور اسٹاف کے الگ الگ اختیارات (Permissions)</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv9_f3">مستقبل میں نئے فیچرز شامل کرنے کی آسانی</span></li>
+            </ul>
+            <div class="service-footer">
+              <button class="btn btn-card-quote" onclick="selectServiceForQuote('کسٹم سافٹ ویئر / Custom Software Development')">
+                <span data-i18n="btn_quote">کوٹیشن حاصل کریں</span>
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 10: Website Maintenance and Updates -->
+        <div class="service-card card-elevated" data-service-id="website-maintenance">
+          <div class="service-media-header">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Website Maintenance and Updates Preview" loading="lazy" class="service-media-img">
+            <div class="service-media-overlay">
+              <span class="service-badge" data-i18n="srv10_badge">سپورٹ</span>
+              <span class="device-tag"><i class="fa-solid fa-gauge-high"></i> <span data-i18n="tag_maintenance">سپیڈ و دیکھ بھال</span></span>
+            </div>
+          </div>
+          <div class="service-card-body">
+            <div class="service-header-compact">
+              <div class="service-icon-box rose">
+                <i class="fa-solid fa-wrench"></i>
+              </div>
+              <h3 class="service-title" data-i18n="srv10_title">ویب سائٹ مینٹیننس اور اپ ڈیٹس</h3>
+            </div>
+            <p class="service-desc" data-i18n="srv10_desc">
+              پہلے سے موجود ویب سائٹس کی مرمت، ٹیکسٹ اور تصاویر بدلنا، اسپیڈ تیز کرنا، خرابیاں ٹھیک کرنا اور ڈومین ہوسٹنگ کا انتظام۔
+            </p>
+            <ul class="service-features">
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv10_f1">متن، تصاویر، بینرز اور نمبرز کی بروقت تبدیلی</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv10_f2">موبائل لے آؤٹ اور تکنیکی نقائص کی اصلاح</span></li>
+              <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="srv10_f3">ڈومین، ڈی این ایس اور سرور ہوسٹنگ سپورٹ</span></li>
+            </ul>
+            <div class="service-footer">
+              <button class="btn btn-card-quote" onclick="selectServiceForQuote('ویب سائٹ مینٹیننس / Website Maintenance and Updates')">
+                <span data-i18n="btn_quote">کوٹیشن حاصل کریں</span>
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- PORTFOLIO & DEMO PROJECTS SECTION -->
+  <!-- ============================================ -->
+  <section class="portfolio-section" id="portfolio">
+    <div class="container">
+      
+      <div class="section-header text-center">
+        <div class="section-tag">
+          <i class="fa-solid fa-briefcase"></i>
+          <span data-i18n="portfolio_tag">نمونہ کام اور ڈیمو ڈیزائنز</span>
+        </div>
+        <h2 class="section-heading" data-i18n="portfolio_heading">
+          ہمارے بنائے گئے <span class="gradient-text">ڈیموز کا معائنہ کریں</span>
+        </h2>
+        <p class="section-description centered" data-i18n="portfolio_desc">
+          یہاں پیش کردہ تمام پروجیکٹس ہمارے ڈیزائن اور فنی مہارت کو ظاہر کرنے والے نمونہ ڈیزائنز (Demonstration Mockups) ہیں۔
+        </p>
+        
+        <div class="demo-disclaimer-badge">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <span data-i18n="portfolio_disclaimer">وضاحت: یہ تمام ماڈلز ہماری تکنیکی صلاحیتوں کو جانچنے کے لیے تیار کردہ فعال نمونہ پروٹو ٹائپس ہیں۔</span>
+        </div>
+      </div>
+
+      <!-- Portfolio Filter Tabs -->
+      <div class="portfolio-filter-tabs">
+        <button class="filter-btn active" data-filter="all" data-i18n="flt_all">تمام ڈیموز</button>
+        <button class="filter-btn" data-filter="web" data-i18n="flt_web">ویب سائٹس</button>
+        <button class="filter-btn" data-filter="management" data-i18n="flt_pos">POS و مینجمنٹ</button>
+        <button class="filter-btn" data-filter="islamic" data-i18n="flt_islamic">اسلامی و مدرسہ</button>
+        <button class="filter-btn" data-filter="mobile" data-i18n="flt_mobile">موبائل ایپس</button>
+      </div>
+
+      <!-- Portfolio Grid: 6 Demos -->
+      <div class="portfolio-grid" id="portfolioGrid">
+
+        <!-- Demo 1: Corporate Business Website -->
+        <div class="portfolio-card card-elevated" data-category="web">
+          <div class="portfolio-mockup-wrapper">
+            <div class="css-browser-mockup">
+              <div class="browser-bar">
+                <span class="b-dot"></span><span class="b-dot"></span><span class="b-dot"></span>
+                <span class="b-url">demo-business.nexus.pk</span>
+              </div>
+              <div class="browser-image-viewport">
+                <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80" alt="Corporate Business Website Demo" loading="lazy" class="portfolio-img">
+              </div>
+            </div>
+            <div class="portfolio-overlay">
+              <span class="demo-tag" data-i18n="demo_badge">نمونہ ڈیمو ڈیزائن</span>
+              <button class="btn btn-preview-modal" onclick="openDemoModal('business')">
+                <i class="fa-solid fa-eye"></i> <span data-i18n="btn_view_details">تفصیلات دیکھیں</span>
+              </button>
+            </div>
+          </div>
+          <div class="portfolio-card-info">
+            <div class="portfolio-meta-row">
+              <span class="project-category" data-i18n="demo1_cat">کارپوریٹ ویب سائٹ ڈیمو</span>
+              <span class="portfolio-device-badge"><i class="fa-solid fa-laptop"></i> <span data-i18n="port_badge_laptop">لیپ ٹاپ ویب سائٹ</span></span>
+            </div>
+            <h3 class="project-title" data-i18n="demo1_title">کارپوریٹ بزنس ویب سائٹ</h3>
+            <p class="project-desc" data-i18n="demo1_desc">لیڈ جنریشن، شاندار ریسپانسو لے آؤٹ اور واٹس ایپ مشاورت کے لنک کے ساتھ پروقار ویب سائٹ۔</p>
+            <div class="tech-tags">
+              <span>HTML5</span><span>CSS3</span><span>Responsive</span><span>WhatsApp</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Demo 2: Shop Management Dashboard -->
+        <div class="portfolio-card card-elevated" data-category="management">
+          <div class="portfolio-mockup-wrapper">
+            <div class="css-browser-mockup">
+              <div class="browser-bar">
+                <span class="b-dot"></span><span class="b-dot"></span><span class="b-dot"></span>
+                <span class="b-url">pos.quickretail.demo</span>
+              </div>
+              <div class="browser-image-viewport">
+                <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=800&q=80" alt="Shop Management POS Dashboard Demo" loading="lazy" class="portfolio-img">
+              </div>
+            </div>
+            <div class="portfolio-overlay">
+              <span class="demo-tag" data-i18n="demo_badge">نمونہ ڈیمو ڈیزائن</span>
+              <button class="btn btn-preview-modal" onclick="openDemoModal('pos')">
+                <i class="fa-solid fa-eye"></i> <span data-i18n="btn_view_details">تفصیلات دیکھیں</span>
+              </button>
+            </div>
+          </div>
+          <div class="portfolio-card-info">
+            <div class="portfolio-meta-row">
+              <span class="project-category" data-i18n="demo2_cat">شاپ POS و بلنگ ڈیمو</span>
+              <span class="portfolio-device-badge"><i class="fa-solid fa-cash-register"></i> <span data-i18n="port_badge_pos">کاؤنٹر POS سسٹم</span></span>
+            </div>
+            <h3 class="project-title" data-i18n="demo2_title">دکان مینجمنٹ اور POS ڈیش بورڈ</h3>
+            <p class="project-desc" data-i18n="demo2_desc">فوری بارکوڈ بلنگ، گاہک ادھار کھاتہ (Khata) کا ریکارڈ اور روزانہ کی مالی رپورٹ۔</p>
+            <div class="tech-tags">
+              <span>POS Interface</span><span>Dashboard UI</span><span>Inventory Logic</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Demo 3: Online Shopping Website -->
+        <div class="portfolio-card card-elevated" data-category="web">
+          <div class="portfolio-mockup-wrapper">
+            <div class="css-browser-mockup">
+              <div class="browser-bar">
+                <span class="b-dot"></span><span class="b-dot"></span><span class="b-dot"></span>
+                <span class="b-url">demo-store.shopease.pk</span>
+              </div>
+              <div class="browser-image-viewport">
+                <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=800&q=80" alt="Online Shopping Website Demo" loading="lazy" class="portfolio-img">
+              </div>
+            </div>
+            <div class="portfolio-overlay">
+              <span class="demo-tag" data-i18n="demo_badge">نمونہ ڈیمو ڈیزائن</span>
+              <button class="btn btn-preview-modal" onclick="openDemoModal('store')">
+                <i class="fa-solid fa-eye"></i> <span data-i18n="btn_view_details">تفصیلات دیکھیں</span>
+              </button>
+            </div>
+          </div>
+          <div class="portfolio-card-info">
+            <div class="portfolio-meta-row">
+              <span class="project-category" data-i18n="demo3_cat">ای کامرس اسٹور ڈیمو</span>
+              <span class="portfolio-device-badge"><i class="fa-solid fa-cart-shopping"></i> <span data-i18n="port_badge_ecommerce">ای کامرس اسٹور</span></span>
+            </div>
+            <h3 class="project-title" data-i18n="demo3_title">آن لائن شاپنگ ویب سائٹ</h3>
+            <p class="project-desc" data-i18n="demo3_desc">پراڈکٹ کیٹلاگ، سرچ کیٹیگریز اور واٹس ایپ پر ایک کلک سے فوری آرڈر کی سہولت۔</p>
+            <div class="tech-tags">
+              <span>E-Commerce UI</span><span>WhatsApp Checkout</span><span>Catalog</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Demo 4: Madrasa & Islamic Institution Website -->
+        <div class="portfolio-card card-elevated" data-category="islamic">
+          <div class="portfolio-mockup-wrapper">
+            <div class="css-browser-mockup">
+              <div class="browser-bar">
+                <span class="b-dot"></span><span class="b-dot"></span><span class="b-dot"></span>
+                <span class="b-url">jamia-noorulhuda.islamic-demo.org</span>
+              </div>
+              <div class="browser-image-viewport">
+                <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=800&q=80" alt="Madrasa & Islamic Institution Website Demo" loading="lazy" class="portfolio-img">
+              </div>
+            </div>
+            <div class="portfolio-overlay">
+              <span class="demo-tag" data-i18n="demo_badge">نمونہ ڈیمو ڈیزائن</span>
+              <button class="btn btn-preview-modal" onclick="openDemoModal('madrasa')">
+                <i class="fa-solid fa-eye"></i> <span data-i18n="btn_view_details">تفصیلات دیکھیں</span>
+              </button>
+            </div>
+          </div>
+          <div class="portfolio-card-info">
+            <div class="portfolio-meta-row">
+              <span class="project-category" data-i18n="demo4_cat">اسلامی ادارہ پورٹل ڈیمو</span>
+              <span class="portfolio-device-badge"><i class="fa-solid fa-mosque"></i> <span data-i18n="port_badge_madrasa">جامعہ و مدرسہ ویب</span></span>
+            </div>
+            <h3 class="project-title" data-i18n="demo4_title">مدرسہ و جامعہ ویب سائٹ</h3>
+            <p class="project-desc" data-i18n="demo4_desc">شعبہ جات، نصاب تعلیم، آن لائن داخلہ رہنمائی اور مخیر حضرات کے لیے عطیات کی معلومات۔</p>
+            <div class="tech-tags">
+              <span>Bilingual Support</span><span>Arabic Typography</span><span>Donation Portals</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Demo 5: School Management System -->
+        <div class="portfolio-card card-elevated" data-category="management">
+          <div class="portfolio-mockup-wrapper">
+            <div class="css-browser-mockup">
+              <div class="browser-bar">
+                <span class="b-dot"></span><span class="b-dot"></span><span class="b-dot"></span>
+                <span class="b-url">portal.smartschool.demo</span>
+              </div>
+              <div class="browser-image-viewport">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="School Management System Demo" loading="lazy" class="portfolio-img">
+              </div>
+            </div>
+            <div class="portfolio-overlay">
+              <span class="demo-tag" data-i18n="demo_badge">نمونہ ڈیمو ڈیزائن</span>
+              <button class="btn btn-preview-modal" onclick="openDemoModal('school')">
+                <i class="fa-solid fa-eye"></i> <span data-i18n="btn_view_details">تفصیلات دیکھیں</span>
+              </button>
+            </div>
+          </div>
+          <div class="portfolio-card-info">
+            <div class="portfolio-meta-row">
+              <span class="project-category" data-i18n="demo5_cat">ایجوکیشن ERP ڈیمو</span>
+              <span class="portfolio-device-badge"><i class="fa-solid fa-graduation-cap"></i> <span data-i18n="port_badge_school">اسکول مینجمنٹ ERP</span></span>
+            </div>
+            <h3 class="project-title" data-i18n="demo5_title">اسکول مینجمنٹ سسٹم</h3>
+            <p class="project-desc" data-i18n="demo5_desc">اسکولوں اور اکیڈمیز کے لیے طلباء کا مکمل انتظام، فیس واؤچرز اور امتحانی رزلٹ کارڈز۔</p>
+            <div class="tech-tags">
+              <span>School ERP</span><span>Fee Management</span><span>Class Rosters</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Demo 6: Quran & Islamic Mobile Application -->
+        <div class="portfolio-card card-elevated" data-category="islamic mobile">
+          <div class="portfolio-mockup-wrapper">
+            <div class="css-browser-mockup">
+              <div class="browser-bar">
+                <span class="b-dot"></span><span class="b-dot"></span><span class="b-dot"></span>
+                <span class="b-url">quran-app.mobile.demo</span>
+              </div>
+              <div class="browser-image-viewport">
+                <img src="https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&w=800&q=80" alt="Quran & Islamic Mobile Application Demo" loading="lazy" class="portfolio-img">
+              </div>
+            </div>
+            <div class="portfolio-overlay">
+              <span class="demo-tag" data-i18n="demo_badge">نمونہ ڈیمو ڈیزائن</span>
+              <button class="btn btn-preview-modal" onclick="openDemoModal('quran')">
+                <i class="fa-solid fa-eye"></i> <span data-i18n="btn_view_details">تفصیلات دیکھیں</span>
+              </button>
+            </div>
+          </div>
+          <div class="portfolio-card-info">
+            <div class="portfolio-meta-row">
+              <span class="project-category" data-i18n="demo6_cat">اسلامی موبائل ایپ ڈیمو</span>
+              <span class="portfolio-device-badge"><i class="fa-solid fa-book-quran"></i> <span data-i18n="port_badge_quran">قرآنی موبائل ایپ</span></span>
+            </div>
+            <h3 class="project-title" data-i18n="demo6_title">قرآن اور اسلامی ایپلی کیشن</h3>
+            <p class="project-desc" data-i18n="demo6_desc">واضح عربی سورتیں، اردو ترجمہ، نماز کے اوقات کی گھڑی اور ڈیجیٹل تسبیح کاؤنٹر۔</p>
+            <div class="tech-tags">
+              <span>Mobile UI</span><span>Arabic Script</span><span>Salah Timing</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- WHY CHOOSE US SECTION -->
+  <!-- ============================================ -->
+  <section class="why-us-section" id="why-us">
+    <div class="container">
+      
+      <div class="section-header text-center">
+        <div class="section-tag">
+          <i class="fa-solid fa-award"></i>
+          <span data-i18n="why_tag">ہمارے نمایاں فوائد</span>
+        </div>
+        <h2 class="section-heading" data-i18n="why_heading">
+          ہمیں کیوں <span class="gradient-text">منتخب کریں؟</span>
+        </h2>
+        <p class="section-description centered" data-i18n="why_desc">
+          ہم آپ کے کاروبار کی ضرورت کو سمجھتے ہیں: جدید ڈیزائن، آسان استعمال، سستا پیکیج اور ہر وقت دستیاب رابطہ۔
+        </p>
+      </div>
+
+      <div class="why-grid">
+
+        <!-- Point 1: Modern & Professional Design -->
+        <div class="why-card">
+          <div class="why-num">01</div>
+          <div class="why-icon-box purple">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <h3 class="why-title" data-i18n="why1_title">جدید اور پروفیشنل ڈیزائن</h3>
+          <p class="why-desc" data-i18n="why1_desc">
+            ہم بین الاقوامی سطح کے جدید رنگوں، صاف ستھری ٹائپوگرافی اور نفیس اینیمیشنز کے ساتھ ایسے ڈیزائن بناتے ہیں جو آپ کے ادارے کا وقار بڑھاتے ہیں۔
+          </p>
+        </div>
+
+        <!-- Point 2: Mobile-Friendly -->
+        <div class="why-card">
+          <div class="why-num">02</div>
+          <div class="why-icon-box cyan">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+          </div>
+          <h3 class="why-title" data-i18n="why2_title">موبائل فرینڈلی اور ریسپانسو</h3>
+          <p class="why-desc" data-i18n="why2_desc">
+            ہر ویب پیج اور ایپ اسمارٹ فونز، ٹیبلٹس اور کمپیوٹرز پر یکساں خوبصورتی سے کھلتی ہے اور کوئی بٹن یا تحریر کٹتی نہیں ہے۔
+          </p>
+        </div>
+
+        <!-- Point 3: Customized Solutions -->
+        <div class="why-card">
+          <div class="why-num">03</div>
+          <div class="why-icon-box violet">
+            <i class="fa-solid fa-code-merge"></i>
+          </div>
+          <h3 class="why-title" data-i18n="why3_title">کسٹمائزڈ اور ذاتی ضروریات کے مطابق</h3>
+          <p class="why-desc" data-i18n="why3_desc">
+            کوئی بنے بنائے سستے سانچے نہیں؛ ہم آپ کے کام کی ضرورت کو سنتے ہیں اور خاص آپ کی دکان، اسکول یا ادارے کے لیے سسٹم بناتے ہیں۔
+          </p>
+        </div>
+
+        <!-- Point 4: Easy-to-Use Interfaces -->
+        <div class="why-card">
+          <div class="why-num">04</div>
+          <div class="why-icon-box blue">
+            <i class="fa-solid fa-fingerprint"></i>
+          </div>
+          <h3 class="why-title" data-i18n="why4_title">استعمال میں نہایت آسان انٹرفیس</h3>
+          <p class="why-desc" data-i18n="why4_desc">
+            ہم سافٹ ویئر کو اتنا آسان بناتے ہیں کہ آپ کا سیلز مین، استاد یا عملہ بغیر کسی مشکل کے چند منٹوں میں چلانا سیکھ جائے۔
+          </p>
+        </div>
+
+        <!-- Point 5: Reliable Communication -->
+        <div class="why-card">
+          <div class="why-num">05</div>
+          <div class="why-icon-box green">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <h3 class="why-title" data-i18n="why5_title">تیز رفتار اور قابلِ اعتماد واٹس ایپ رابطہ</h3>
+          <p class="why-desc" data-i18n="why5_desc">
+            ہم سے براہِ راست واٹس ایپ <strong>03305417514</strong> پر رابطہ رکھیں؛ کام کے ہر مرحلے پر آپ کو مکمل باخبر رکھا جاتا ہے۔
+          </p>
+        </div>
+
+        <!-- Point 6: Maintenance and Support -->
+        <div class="why-card">
+          <div class="why-num">06</div>
+          <div class="why-icon-box rose">
+            <i class="fa-solid fa-shield-heart"></i>
+          </div>
+          <h3 class="why-title" data-i18n="why6_title">مستقل دیکھ بھال اور تکنیکی سپورٹ</h3>
+          <p class="why-desc" data-i18n="why6_desc">
+            ہمارا تعلق پروجیکٹ مکمل ہونے کے بعد بھی جاری رہتا ہے۔ ہم تبدیلیاں کرنے، ہوسٹنگ سیٹ اپ اور مستقبل کے اضافوں میں ہمیشہ آپ کے ساتھ ہیں۔
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- HOW IT WORKS SECTION (4 SIMPLE STEPS) -->
+  <!-- ============================================ -->
+  <section class="how-it-works-section" id="how-it-works">
+    <div class="container">
+      
+      <div class="section-header text-center">
+        <div class="section-tag">
+          <i class="fa-solid fa-route"></i>
+          <span data-i18n="step_tag">4 آسان مراحل</span>
+        </div>
+        <h2 class="section-heading" data-i18n="step_heading">
+          کام کا <span class="gradient-text">طریقہ کار</span>
+        </h2>
+        <p class="section-description centered" data-i18n="step_desc">
+          پہلی بات چیت سے لے کر لائیو ویب سائٹ کی تکمیل تک کا سیدھا اور شفاف سفر۔
+        </p>
+      </div>
+
+      <div class="steps-container">
+        <div class="step-line-bar"></div>
+        <div class="steps-grid">
+
+          <!-- Step 1 -->
+          <div class="step-card">
+            <div class="step-counter">1</div>
+            <div class="step-icon"><i class="fa-solid fa-paper-plane"></i></div>
+            <h3 class="step-title" data-i18n="step1_title">1. اپنے پروجیکٹ سے آگاہ کریں</h3>
+            <p class="step-desc" data-i18n="step1_desc">
+              نیچے دیا گیا فارم بھریں یا سیدھا واٹس ایپ پر اپنے کاروبار کی قسم اور مطلوبہ ویب سائٹ یا ایپ کا پیغام بھیجیں۔
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-card">
+            <div class="step-counter">2</div>
+            <div class="step-icon"><i class="fa-solid fa-comments"></i></div>
+            <h3 class="step-title" data-i18n="step2_title">2. ضروریات اور فیس طے کریں</h3>
+            <p class="step-desc" data-i18n="step2_desc">
+              ہم واٹس ایپ یا فون پر آپ کے ساتھ فیچرز، وقت اور مناسب قیمت طے کرتے ہیں تاکہ کوئی ابہام باقی نہ رہے۔
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-card">
+            <div class="step-counter">3</div>
+            <div class="step-icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <h3 class="step-title" data-i18n="step3_title">3. ہم آپ کی ویب سائٹ تیار کرتے ہیں</h3>
+            <p class="step-desc" data-i18n="step3_desc">
+              ہم پیشہ ورانہ اور جدید ترین کوڈنگ کے ساتھ آپ کی ویب سائٹ، ایپ یا مینجمنٹ سسٹم کی تعمیر کرتے ہیں۔
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="step-card">
+            <div class="step-counter">4</div>
+            <div class="step-icon"><i class="fa-solid fa-rocket"></i></div>
+            <h3 class="step-title" data-i18n="step4_title">4. معائنہ، لائیو لانچ اور سپورٹ</h3>
+            <p class="step-desc" data-i18n="step4_desc">
+              آپ کام چیک کرتے ہیں، چھوٹی موٹی ترامیم کے بعد ویب سائٹ کو انٹرنیٹ پر لائیو کر دیا جاتا ہے اور سپورٹ جاری رہتی ہے۔
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- WHATSAPP COMMUNITY GROUP SECTION -->
+  <!-- ============================================ -->
+  <section class="community-section" id="community">
+    <div class="container">
+      <div class="community-banner">
+        <div class="community-glow"></div>
+        <div class="community-content">
+          <div class="community-badge">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span data-i18n="comm_badge">رابطے میں رہیں</span>
+          </div>
+          <h2 class="community-title" data-i18n="comm_title">
+            ہمارے واٹس ایپ کمیونٹی گروپ میں شامل ہوں
+          </h2>
+          <p class="community-desc" data-i18n="comm_desc">
+            کاروباری حضرات، اسکول منتظمین اور ڈویلپرز کے نیٹ ورک سے جڑیں۔ نئی سافٹ ویئر اپ ڈیٹس، بزنس گروتھ ٹپس اور مفید معلوماتی نوٹیفکیشنز حاصل کریں۔
+          </p>
+          <div class="community-action-row">
+            <button class="btn btn-community-join" id="whatsappGroupBtn">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span data-i18n="comm_btn_join">واٹس ایپ گروپ جوائن کریں</span>
+            </button>
+            <a href="https://wa.me/923305417514" target="_blank" rel="noopener noreferrer" class="btn btn-secondary-chat">
+              <span data-i18n="comm_btn_direct">براہِ راست چیٹ: 03305417514</span>
+            </a>
+          </div>
+        </div>
+        <div class="community-visual">
+          <div class="community-icon-box">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <div class="community-chat-bubble">
+            <span class="bubble-title">Website and App Solution</span>
+            <span class="bubble-sub" data-i18n="comm_bubble_sub">ڈیجیٹل اپ ڈیٹس اور رہنمائی</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- FREQUENTLY ASKED QUESTIONS (FAQ) -->
+  <!-- ============================================ -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      
+      <div class="section-header text-center">
+        <div class="section-tag">
+          <i class="fa-solid fa-circle-question"></i>
+          <span data-i18n="faq_tag">عام سوالات کے جوابات</span>
+        </div>
+        <h2 class="section-heading" data-i18n="faq_heading">
+          اکثر پوچھے جانے والے <span class="gradient-text">اہم سوالات</span>
+        </h2>
+        <p class="section-description centered" data-i18n="faq_desc">
+          کیا آپ کے ذہن میں کوئی سوال ہے؟ یہاں کام کی تفصیل، قیمت اور ڈیلیوری سے متعلق تمام معلومات موجود ہیں۔
+        </p>
+      </div>
+
+      <div class="faq-accordion" id="faqAccordion">
+
+        <!-- Question 1 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="question-text" data-i18n="faq1_q">میں Website and App Solution سے پروجیکٹ کیسے شروع کروا سکتا ہوں؟</span>
+            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq1_a">
+              کام شروع کروانا بے حد آسان ہے! آپ نیچے دیا گیا پروجیکٹ فارم بھریں یا کسی بھی واٹس ایپ بٹن پر کلک کر کے سیدھا <strong>03305417514</strong> پر رابطہ کریں۔ ہم آپ کی ضروریات سنیں گے، بہترین حل تجویز کریں گے اور مناسب قیمت بتائیں گے۔
+            </p>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="question-text" data-i18n="faq2_q">کیا ویب سائٹ میں دونوں زبانیں (اردو اور انگریزی) موجود ہیں؟</span>
+            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq2_a">
+              جی ہاں! ہم دو لسانی (Bilingual) ویب سائٹس بناتے ہیں۔ ہماری ویب سائٹ پر اوپر دیے گئے گلوب بٹن (🌐 English / اردو) سے کسی بھی وقت زبان تبدیل کی جا سکتی ہے۔ مدارس، مساجد اور مقامی پاکستانی دکانوں کے لیے نستعلیق اردو میں کام کرنے کی مکمل سہولت موجود ہے۔
+            </p>
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="question-text" data-i18n="faq3_q">کیا یہ ویب سائٹ فرنٹ اینڈ ہے یا مکمل بیک اینڈ ڈیٹا بیس بھی ہے؟</span>
+            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq3_a">
+              یہ پبلک ویب سائٹ ایک تیز رفتار فرنٹ اینڈ ہے جس میں انکوائری سیدھی آپ کے واٹس ایپ پر چلی جاتی ہے تاکہ کسی سرور ڈیٹا بیس کی فیس نہ دینی پڑے۔ اگر کلائنٹ کو فل اسکیل لاگ ان، شاپ کا کلاؤڈ ڈیٹا بیس یا اسکول ERP درکار ہو تو ہم حسبِ ضرورت الگ سے بیک اینڈ سروس (Node.js یا Firebase) جوڑ کر دیتے ہیں۔
+            </p>
+          </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="question-text" data-i18n="faq4_q">کیا آپ ڈومین نام اور ہوسٹنگ کا سیٹ اپ بھی کر کے دیتے ہیں؟</span>
+            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq4_a">
+              جی بالکل! ہم آپ کو بہترین ڈومین نام (جیسے .com، .pk، یا .org) منتخب کرنے سے لے کر ورسیل (Vercel) یا گٹ ہب پر بالکل مفت ہوسٹنگ اور مستقل SSL سیکیورٹی سیٹ اپ کرنے تک مکمل رہنمائی فراہم کرتے ہیں۔
+            </p>
+          </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="question-text" data-i18n="faq5_q">کیا دکان کا بلنگ اور کھاتہ سسٹم موبائل فون پر چلایا جا سکتا ہے؟</span>
+            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq5_a">
+              جی ہاں! ہمارا بنایا گیا شاپ مینجمنٹ اور انوینٹری سسٹم مکمل موبائل ریسپانسو ہوتا ہے۔ آپ دکان میں موجود نہ بھی ہوں تو گھر بیٹھے اپنے اسمارٹ فون پر دکان کی سیلز، ادھار کھاتہ اور موجودہ اسٹاک کی صورتحال دیکھ سکتے ہیں۔
+            </p>
+          </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="question-text" data-i18n="faq6_q">ویب سائٹ یا ایپ مکمل ہونے کے بعد سپورٹ کیسے ملتی ہے؟</span>
+            <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq6_a">
+              پروجیکٹ ڈیلیور ہونے کے بعد بھی ہم اپنے گاہکوں کے ساتھ کھڑے رہتے ہیں۔ کوئی بھی متن بدلنا ہو، تصویر اپ ڈیٹ کرنی ہو یا نئی سروس شامل کرنی ہو، آپ واٹس ایپ پر ایک پیغام بھیج کر فوری مدد حاصل کر سکتے ہیں۔
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- CONTACT & PROJECT INQUIRY FORM (WHATSAPP) -->
+  <!-- ============================================ -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      
+      <div class="contact-grid">
+        
+        <!-- Left: Contact Details Column -->
+        <div class="contact-info-col">
+          <div class="section-tag">
+            <i class="fa-solid fa-envelope-open-text"></i>
+            <span data-i18n="contact_tag">براہِ راست رابطہ</span>
+          </div>
+          <h2 class="section-heading" data-i18n="contact_heading">
+            آئیے اپنے نئے <span class="gradient-text">پروجیکٹ کا آغاز کریں</span>
+          </h2>
+          <p class="section-description" data-i18n="contact_desc">
+            کیا آپ اپنے کاروبار، دکان یا اسکول کے لیے ویب سائٹ یا ایپ بنوانا چاہتے ہیں؟ نیچے دیا گیا فارم بھریں یا براہ راست واٹس ایپ پر بات چیت کریں۔
+          </p>
+
+          <div class="contact-cards-list">
+            
+            <!-- WhatsApp Card -->
+            <a href="https://wa.me/923305417514" target="_blank" rel="noopener noreferrer" class="contact-method-card active-wa">
+              <div class="c-icon"><i class="fa-brands fa-whatsapp"></i></div>
+              <div class="c-details">
+                <span class="c-label" data-i18n="c_wa_label">آفیشل واٹس ایپ (چیٹ کے لیے کلک کریں)</span>
+                <span class="c-value">03305417514</span>
+                <span class="c-sub" data-i18n="c_wa_sub">فوری جواب اور وائس میسج کی سہولت</span>
+              </div>
+              <div class="c-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+            </a>
+
+            <!-- Service Scope Card -->
+            <div class="contact-method-card">
+              <div class="c-icon"><i class="fa-solid fa-laptop-code"></i></div>
+              <div class="c-details">
+                <span class="c-label" data-i18n="c_scope_label">دائرہ کار</span>
+                <span class="c-value" data-i18n="c_scope_val">ویب سائٹس، ایپس اور سافٹ ویئر سسٹمز</span>
+                <span class="c-sub" data-i18n="c_scope_sub">دکانوں، اسکولوں، مدارس اور کمپنیوں کے لیے</span>
+              </div>
+            </div>
+
+            <!-- Availability Card -->
+            <div class="contact-method-card">
+              <div class="c-icon"><i class="fa-solid fa-clock"></i></div>
+              <div class="c-details">
+                <span class="c-label" data-i18n="c_time_label">اوقات کار</span>
+                <span class="c-value" data-i18n="c_time_val">پیر تا ہفتہ: صبح 9:00 تا رات 9:00</span>
+                <span class="c-sub" data-i18n="c_time_sub">واٹس ایپ پر میسج کسی بھی وقت چھوڑ سکتے ہیں</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Community Trigger -->
+          <div class="contact-community-trigger">
+            <h4 data-i18n="c_comm_title">ہماری کمیونٹی سے جڑنا چاہتے ہیں؟</h4>
+            <p data-i18n="c_comm_desc">ٹیکنالوجی اپ ڈیٹس اور نوٹس کے لیے ہمارے گروپ میں شامل ہوں۔</p>
+            <button class="btn btn-outline-sm" onclick="handleGroupClick()">
+              <i class="fa-brands fa-whatsapp"></i> <span data-i18n="c_comm_btn">واٹس ایپ گروپ جوائن کریں</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Inquiry Form Column -->
+        <div class="contact-form-col">
+          <div class="form-container-card">
+            
+            <div class="form-header">
+              <div class="form-icon"><i class="fa-brands fa-whatsapp"></i></div>
+              <div>
+                <h3 class="form-title" data-i18n="form_title">واٹس ایپ پر پروجیکٹ کی تفصیل بھیجیں</h3>
+                <p class="form-subtitle" data-i18n="form_subtitle">تفصیلات درج کریں؛ بٹن دبانے پر واٹس ایپ میں مکمل میسج خود بخود تیار ہو جائے گا۔</p>
+              </div>
+            </div>
+
+            <!-- Notice explaining WhatsApp delivery -->
+            <div class="form-notice">
+              <i class="fa-solid fa-shield-check"></i>
+              <span data-i18n="form_notice"><strong>100% محفوظ:</strong> سبمٹ کرنے پر آپ کی تفصیلات براہِ راست واٹس ایپ پر 03305417514 پر بھیجی جائیں گی۔ کسی رجسٹریشن کی ضرورت نہیں۔</span>
+            </div>
+
+            <form id="projectInquiryForm" class="inquiry-form" novalidate>
+              
+              <div class="form-row">
+                <!-- Field 1: Full Name -->
+                <div class="form-group">
+                  <label for="fullName"><span data-i18n="lbl_name">آپ کا پورا نام</span> <span class="required-star">*</span></label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-user input-icon"></i>
+                    <input type="text" id="fullName" name="fullName" placeholder="مثلاً: محمد احمد" required autocomplete="name">
+                  </div>
+                  <span class="error-msg" id="nameError" data-i18n="err_name">براہِ کرم اپنا پورا نام درج کریں</span>
+                </div>
+
+                <!-- Field 2: Phone Number -->
+                <div class="form-group">
+                  <label for="phoneNumber"><span data-i18n="lbl_phone">واٹس ایپ / فون نمبر</span> <span class="required-star">*</span></label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-phone input-icon"></i>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="مثلاً: 03001234567" required autocomplete="tel">
+                  </div>
+                  <span class="error-msg" id="phoneError" data-i18n="err_phone">براہِ کرم درست فون نمبر درج کریں</span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <!-- Field 3: Business Name -->
+                <div class="form-group">
+                  <label for="orgName"><span data-i18n="lbl_org">دکان / کاروبار / ادارے کا نام</span> <span class="required-star">*</span></label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-building input-icon"></i>
+                    <input type="text" id="orgName" name="orgName" placeholder="مثلاً: المدینہ ٹریڈرز / جامعہ اکیڈمی" required>
+                  </div>
+                  <span class="error-msg" id="orgError" data-i18n="err_org">اپنے ادارے یا کاروبار کا نام درج کریں</span>
+                </div>
+
+                <!-- Field 4: Required Service -->
+                <div class="form-group">
+                  <label for="serviceType"><span data-i18n="lbl_service">مطلوبہ سروس</span> <span class="required-star">*</span></label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-list-check input-icon"></i>
+                    <select id="serviceType" name="serviceType" required>
+                      <option value="" disabled selected>-- سروس منتخب کریں --</option>
+                      <option value="بزنس ویب سائٹ ڈویلپمنٹ / Business Website Development">1. بزنس ویب سائٹ ڈویلپمنٹ</option>
+                      <option value="موبائل ایپلیکیشن ڈویلپمنٹ / Mobile Application Development">2. موبائل ایپلیکیشن ڈویلپمنٹ</option>
+                      <option value="ای کامرس ویب سائٹ / E-commerce Websites">3. ای کامرس آن لائن شاپنگ ویب سائٹ</option>
+                      <option value="دکان مینجمنٹ اور POS سسٹم / Shop Management and POS Systems">4. دکان مینجمنٹ اور POS سسٹم</option>
+                      <option value="انوینٹری اور اسٹاک مینجمنٹ / Inventory and Stock Management Systems">5. انوینٹری اور اسٹاک مینجمنٹ سسٹم</option>
+                      <option value="اسکول مینجمنٹ سسٹم / School and Academy Management Systems">6. اسکول اور اکیڈمی مینجمنٹ سسٹم</option>
+                      <option value="مدرسہ ویب سائٹ / Madrasa and Islamic Institution Websites">7. مدرسہ اور اسلامی ادارے کی ویب سائٹ</option>
+                      <option value="قرآنی اور اسلامی ایپس / Quran and Islamic Applications">8. قرآنی اور اسلامی ایپلی کیشنز</option>
+                      <option value="کسٹم سافٹ ویئر / Custom Software Development">9. کسٹم سافٹ ویئر ڈویلپمنٹ</option>
+                      <option value="ویب سائٹ مینٹیننس / Website Maintenance and Updates">10. ویب سائٹ مینٹیننس اور اپ ڈیٹس</option>
+                      <option value="کوئی اور خاص ضرورت / Other Custom Solution">دیگر کسٹم ڈیجیٹل حل</option>
+                    </select>
+                  </div>
+                  <span class="error-msg" id="serviceError" data-i18n="err_service">براہِ کرم مطلوبہ سروس چنیں</span>
+                </div>
+              </div>
+
+              <!-- Field 5: Estimated Budget (Optional) -->
+              <div class="form-group">
+                <label for="estimatedBudget"><span data-i18n="lbl_budget">تخمینہ بجٹ</span> <span class="optional-tag" data-i18n="lbl_optional">(اختیاری)</span></label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-coins input-icon"></i>
+                  <select id="estimatedBudget" name="estimatedBudget">
+                    <option value="بات چیت کے مطابق / Flexible">بات چیت کے مطابق / اوپن بجٹ</option>
+                    <option value="اسٹارٹر بجٹ (30,000 روپے سے کم)">اسٹارٹر بجٹ (30,000 روپے سے کم)</option>
+                    <option value="اسٹینڈرڈ بجٹ (30,000 تا 70,000 روپے)">اسٹینڈرڈ بجٹ (30,000 تا 70,000 روپے)</option>
+                    <option value="ایڈوانس کسٹم (70,000 روپے سے زیادہ)">ایڈوانس کسٹم (70,000 روپے سے زیادہ)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Field 6: Project Description -->
+              <div class="form-group">
+                <label for="projectDetails"><span data-i18n="lbl_desc">پروجیکٹ کی مختصر تفصیل</span> <span class="required-star">*</span></label>
+                <div class="input-wrapper textarea-wrap">
+                  <i class="fa-solid fa-message input-icon textarea-icon"></i>
+                  <textarea id="projectDetails" name="projectDetails" rows="4" placeholder="مختصراً بتائیں کہ آپ کو کیا خصوصیات درکار ہیں (مثلاً پیجز کی تعداد، خاص فیچرز وغیرہ)..." required></textarea>
+                </div>
+                <span class="error-msg" id="descError" data-i18n="err_desc">براہِ کرم پروجیکٹ کی تفصیل درج کریں</span>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-submit-whatsapp" id="submitInquiryBtn">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span data-i18n="btn_submit_wa">واٹس ایپ کھولیں اور انکوائری بھیجیں</span>
+              </button>
+
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- FOOTER -->
+  <!-- ============================================ -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      
+      <!-- Footer Brand -->
+      <div class="footer-col brand-col">
+        <a href="#home" class="brand-logo footer-logo">
+          <div class="logo-icon-box">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <div class="logo-text">
+            <span class="logo-title">Website <span class="gradient-text">&amp; App</span></span>
+            <span class="logo-sub">Solution</span>
+          </div>
+        </a>
+        <p class="footer-about-text" data-i18n="footer_about">
+          کاروبار، دکانوں، اسکولوں، مساجد اور مدارس کے لیے جدید ویب سائٹس، موبائل ایپس اور اسمارٹ مینجمنٹ سسٹمز کی تیاری۔
+        </p>
+        <div class="footer-wa-badge">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>آفیشل واٹس ایپ: <strong>03305417514</strong></span>
+        </div>
+      </div>
+
+      <!-- Footer Quick Links -->
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer_nav_title">اہم لنکس</h4>
+        <ul class="footer-links">
+          <li><a href="#home"><i class="fa-solid fa-chevron-left"></i> <span data-i18n="nav_home">ہوم</span></a></li>
+          <li><a href="#about"><i class="fa-solid fa-chevron-left"></i> <span data-i18n="nav_about">ہمارے متعلق</span></a></li>
+          <li><a href="#services"><i class="fa-solid fa-chevron-left"></i> <span data-i18n="nav_services">ہماری خدمات</span></a></li>
+          <li><a href="#portfolio"><i class="fa-solid fa-chevron-left"></i> <span data-i18n="nav_portfolio">پورٹ فولیو و ڈیمو</span></a></li>
+          <li><a href="#why-us"><i class="fa-solid fa-chevron-left"></i> <span data-i18n="nav_why_us">ہمیں کیوں چنیں؟</span></a></li>
+          <li><a href="#how-it-works"><i class="fa-solid fa-chevron-left"></i> <span data-i18n="nav_process">طریقہ کار</span></a></li>
+          <li><a href="#faq"><i class="fa-solid fa-chevron-left"></i> <span data-i18n="nav_faq">اکثر سوالات</span></a></li>
+          <li><a href="#contact"><i class="fa-solid fa-chevron-left"></i> <span data-i18n="nav_contact">رابطہ فارم</span></a></li>
+        </ul>
+      </div>
+
+      <!-- Footer Services Directory -->
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer_srv_title">ہمارے سلوشنز</h4>
+        <ul class="footer-links">
+          <li><a href="#services" onclick="selectServiceForQuote('بزنس ویب سائٹ ڈویلپمنٹ / Business Website Development')"><i class="fa-solid fa-chevron-left"></i> <span data-i18n="srv1_title">بزنس ویب سائٹ</span></a></li>
+          <li><a href="#services" onclick="selectServiceForQuote('موبائل ایپلیکیشن ڈویلپمنٹ / Mobile Application Development')"><i class="fa-solid fa-chevron-left"></i> <span data-i18n="srv2_title">موبائل ایپس</span></a></li>
+          <li><a href="#services" onclick="selectServiceForQuote('ای کامرس ویب سائٹ / E-commerce Websites')"><i class="fa-solid fa-chevron-left"></i> <span data-i18n="srv3_title">ای کامرس اسٹورز</span></a></li>
+          <li><a href="#services" onclick="selectServiceForQuote('دکان مینجمنٹ اور POS سسٹم / Shop Management and POS Systems')"><i class="fa-solid fa-chevron-left"></i> <span data-i18n="srv4_title">شاپ POS سسٹم</span></a></li>
+          <li><a href="#services" onclick="selectServiceForQuote('اسکول مینجمنٹ سسٹم / School and Academy Management Systems')"><i class="fa-solid fa-chevron-left"></i> <span data-i18n="srv6_title">اسکول مینجمنٹ</span></a></li>
+          <li><a href="#services" onclick="selectServiceForQuote('مدرسہ ویب سائٹ / Madrasa and Islamic Institution Websites')"><i class="fa-solid fa-chevron-left"></i> <span data-i18n="srv7_title">مدرسہ پورٹل</span></a></li>
+          <li><a href="#services" onclick="selectServiceForQuote('قرآنی اور اسلامی ایپس / Quran and Islamic Applications')"><i class="fa-solid fa-chevron-left"></i> <span data-i18n="srv8_title">قرآنی ایپس</span></a></li>
+        </ul>
+      </div>
+
+      <!-- Footer Contact Column -->
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer_contact_title">رابطہ و نیٹ ورک</h4>
+        <p class="footer-contact-item">
+          <i class="fa-brands fa-whatsapp"></i>
+          <a href="https://wa.me/923305417514" target="_blank" rel="noopener noreferrer">03305417514</a>
+        </p>
+        <p class="footer-contact-item">
+          <i class="fa-solid fa-comments"></i>
+          <span data-i18n="footer_chat_label">براہِ راست واٹس ایپ مشاورت</span>
+        </p>
+        <p class="footer-contact-item">
+          <i class="fa-solid fa-globe"></i>
+          <span data-i18n="footer_hosting_label">مفت ہوسٹنگ پر لائیو (Vercel اور GitHub)</span>
+        </p>
+        <div class="footer-btn-wrap">
+          <button class="btn btn-footer-group" onclick="handleGroupClick()">
+            <i class="fa-brands fa-whatsapp"></i> <span data-i18n="comm_btn_join">کمیونٹی گروپ جوائن کریں</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p class="copyright-text">
+          &copy; <span id="currentYear"></span> <strong>Website and App Solution</strong>. جملہ حقوق محفوظ ہیں۔
+        </p>
+        <p class="footer-note" data-i18n="footer_rights_note">
+          جدید کوڈنگ اور واٹس ایپ انٹیگریشن کے ساتھ تیار کردہ۔ رابطہ: 03305417514۔
+        </p>
+        <a href="#home" class="back-to-top" id="backToTop" aria-label="Scroll back to top">
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================ -->
+  <!-- FLOATING WHATSAPP BUTTON (GLOBAL) -->
+  <!-- ============================================ -->
+  <div class="floating-whatsapp-container" id="floatingWa">
+    <a href="https://wa.me/923305417514" target="_blank" rel="noopener noreferrer" class="floating-wa-btn" aria-label="Chat directly on WhatsApp with 03305417514">
+      <div class="pulse-ring"></div>
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="floating-tooltip">واٹس ایپ پر رابطہ کریں: 03305417514</span>
+    </a>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- MODAL: PORTFOLIO DEMO DETAILS -->
+  <!-- ============================================ -->
+  <div class="modal-overlay" id="demoModalOverlay" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="modalTitle">ڈیمو پروجیکٹ تفصیلات</h3>
+        <button class="modal-close-btn" id="closeDemoModal" aria-label="Close dialog">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Injected via JavaScript -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary-chat" id="modalSecondaryBtn">بند کریں</button>
+        <button class="btn btn-whatsapp" id="modalQuoteBtn">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>ایسے پروجیکٹ کی کوٹیشن لیں</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- MODAL: WHATSAPP COMMUNITY GROUP ANNOUNCEMENT -->
+  <!-- ============================================ -->
+  <div class="modal-overlay" id="communityModalOverlay" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="community-modal-icon">
+          <i class="fa-brands fa-whatsapp"></i>
+        </div>
+        <h3>واٹس ایپ کمیونٹی گروپ</h3>
+        <button class="modal-close-btn" id="closeCommunityModal" aria-label="Close dialog">&times;</button>
+      </div>
+      <div class="modal-body text-center">
+        <div class="badge-status-soon">
+          <i class="fa-solid fa-bullhorn"></i>
+          <span>آفیشل گروپ جلد لانچ ہو رہا ہے</span>
+        </div>
+        <p class="community-modal-text">
+          ہمارا آفیشل واٹس ایپ کمیونٹی گروپ لنک تیاری کے آخری مراحل میں ہے اور جلد فعال کر دیا جائے گا۔
+        </p>
+        <p class="community-modal-subtext">
+          اس دوران آپ براہِ راست ہمارے نمبر <strong>03305417514</strong> پر رابطہ کر کے اپنا نام لکھوا سکتے ہیں تاکہ گروپ کھلتے ہی آپ کو شامل کر لیا جائے!
+        </p>
+      </div>
+      <div class="modal-footer justify-center">
+        <button class="btn btn-secondary-chat" id="closeCommunityBtn">سمجھ آ گئی</button>
+        <a href="https://wa.me/923305417514?text=السلام%20علیکم%20Website%20and%20App%20Solution,%20براہِ%20کرم%20کمیونٹی%20گروپ%20کھلنے%20پر%20مجھے%20مطلع%20فرمائیں۔" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>واٹس ایپ پر میسج کریں</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Element -->
+  <div class="toast-notification" id="toastNotification" role="alert" aria-live="assertive"></div>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
