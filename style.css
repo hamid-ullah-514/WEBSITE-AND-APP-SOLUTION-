@@ -1341,6 +1341,7 @@ html[dir="ltr"] .mockup-media-badge {
 .about-section {
   padding: 80px 0;
   background: var(--background-color);
+  overflow-x: hidden;
 }
 
 .about-grid {
@@ -1348,10 +1349,14 @@ html[dir="ltr"] .mockup-media-badge {
   grid-template-columns: 1fr 1.15fr;
   gap: 48px;
   align-items: center;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .about-visual {
   position: relative;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .about-badge-card {
@@ -1376,6 +1381,7 @@ html[dir="ltr"] .mockup-media-badge {
   align-items: center;
   justify-content: center;
   font-size: 1.3rem;
+  flex-shrink: 0;
 }
 
 .about-badge-card h4 {
@@ -1389,61 +1395,145 @@ html[dir="ltr"] .mockup-media-badge {
   color: var(--muted-color);
 }
 
+/* Code Graphic Mockup Card (IDE Window) */
+.about-card-main,
 .code-window {
   background: #0B1311;
-  border: 1px solid rgba(5, 150, 105, 0.28);
+  border: 1px solid rgba(5, 150, 105, 0.35);
   border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 16px 36px -10px rgba(5, 150, 105, 0.22), 0 4px 12px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
+.code-header,
 .window-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 16px;
+  padding: 12px 18px;
   background: #060B09;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  direction: ltr; /* Terminal headers always render LTR */
 }
 
+.code-dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.code-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-red { background: #EF4444; }
+.dot-yellow { background: #F59E0B; }
+.dot-green { background: #10B981; }
+
 .code-title {
-  font-size: 0.8rem;
-  color: #CBD5E1;
-  font-family: var(--font-main);
+  font-size: 0.82rem;
+  color: #94A3B8;
+  font-family: 'Consolas', 'Courier New', monospace;
+  direction: ltr;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .code-block {
-  padding: 18px;
+  padding: 18px 20px;
   font-family: 'Consolas', 'Courier New', monospace;
-  font-size: 0.85rem;
-  line-height: 1.6;
+  font-size: 0.84rem;
+  line-height: 1.7;
   color: #E2E8F0;
+  background: #0B1311;
   direction: ltr;
   text-align: left;
+  white-space: pre-wrap;
+  word-break: break-word;
   overflow-x: auto;
+  margin: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
-.code-keyword { color: #F43F5E; }
-.code-var { color: #34D399; }
+.code-keyword { color: #F43F5E; font-weight: 600; }
+.code-var { color: #34D399; font-weight: 600; }
 .code-prop { color: #FBBF24; }
 .code-str { color: #4ADE80; }
 .code-num { color: #F59E0B; }
+.code-bool { color: #38BDF8; font-weight: 600; }
 .code-comment { color: #64748B; font-style: italic; }
 
-.about-lead {
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-  line-height: 1.8;
+.card-footer-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 18px;
+  background: #060B09;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.card-footer-stats .stat-pill,
+.stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(5, 150, 105, 0.15);
+  color: #34D399;
+  border: 1px solid rgba(5, 150, 105, 0.32);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* About Text Column */
+.about-text-content {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.about-text-content .section-tag {
+  margin-bottom: 12px;
+}
+
+.about-text-content .section-heading {
+  text-align: inherit;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 16px;
+}
+
+.about-text-content .section-description,
+.about-lead {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  line-height: 1.85;
+  margin-bottom: 14px;
+  text-align: inherit;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+}
+
+[data-theme="dark"] .about-text-content .section-description,
 [data-theme="dark"] .about-lead {
   color: #6EE7B7;
 }
 
+.about-body-text,
 .about-body {
-  font-size: 1rem;
+  font-size: 0.98rem;
   color: var(--text-color);
   line-height: 1.9;
   margin-bottom: 24px;
@@ -1469,6 +1559,7 @@ html[dir="ltr"] .mockup-media-badge {
   font-weight: 700;
 }
 
+.about-features-list,
 .about-features {
   display: flex;
   flex-direction: column;
@@ -1496,17 +1587,27 @@ html[dir="ltr"] .mockup-media-badge {
   margin-top: 4px;
 }
 
+.feature-info {
+  flex-grow: 1;
+  min-width: 0;
+}
+
 .feature-info h4 {
   font-size: 1rem;
   font-weight: 700;
   color: var(--text-color);
-  margin-bottom: 2px;
+  margin-bottom: 4px;
+  line-height: 1.5;
 }
 
 .feature-info p {
   font-size: 0.88rem;
   color: var(--muted-color);
-  line-height: 1.6;
+  line-height: 1.65;
+}
+
+.about-action {
+  margin-top: 10px;
 }
 
 /* --------------------------------------------------------------------------
@@ -3266,6 +3367,179 @@ html[dir="rtl"] .wa-floating-btn {
     text-align: center;
   }
 
+  /* Responsive Spacing & Section Headings for Mobile */
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .section-header {
+    margin-bottom: 2.2rem;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  .section-heading {
+    font-size: clamp(1.4rem, 5.8vw, 1.95rem);
+    line-height: 1.45;
+    margin-bottom: 0.85rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .section-description {
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  /* About section mobile optimizations */
+  .about-section {
+    padding: 48px 0;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-visual,
+  .about-text-content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .about-badge-card {
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    gap: 12px;
+  }
+
+  .about-badge-card .badge-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+
+  .about-badge-card h4 {
+    font-size: 0.95rem;
+  }
+
+  .about-badge-card p {
+    font-size: 0.8rem;
+  }
+
+  .about-card-main {
+    border-radius: 12px;
+    margin-bottom: 6px;
+  }
+
+  .code-header {
+    padding: 10px 14px;
+  }
+
+  .code-title {
+    font-size: 0.75rem;
+  }
+
+  .code-block {
+    padding: 14px 14px;
+    font-size: 0.74rem;
+    line-height: 1.6;
+  }
+
+  .card-footer-stats {
+    padding: 10px 12px;
+    gap: 6px;
+  }
+
+  .card-footer-stats .stat-pill {
+    font-size: 0.72rem;
+    padding: 4px 10px;
+  }
+
+  .about-text-content .section-heading {
+    font-size: clamp(1.35rem, 5.6vw, 1.8rem);
+    line-height: 1.45;
+    margin-bottom: 12px;
+  }
+
+  .about-text-content .section-description,
+  .about-lead {
+    font-size: 0.96rem;
+    line-height: 1.75;
+    margin-bottom: 12px;
+  }
+
+  .about-body-text,
+  .about-body {
+    font-size: 0.92rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .feature-item {
+    gap: 12px;
+  }
+
+  .feature-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 0.75rem;
+    margin-top: 2px;
+  }
+
+  .feature-info h4 {
+    font-size: 0.92rem;
+  }
+
+  .feature-info p {
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  .about-action .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* FAQ on mobile */
+  .faq-section {
+    padding: 50px 0;
+  }
+
+  .faq-question,
+  .faq-header,
+  html[dir="rtl"] .faq-question,
+  html[dir="rtl"] .faq-header,
+  html[dir="ltr"] .faq-question,
+  html[dir="ltr"] .faq-header {
+    padding: 16px 18px;
+  }
+
+  .question-text {
+    font-size: 0.96rem;
+  }
+
+  .faq-answer,
+  .faq-body,
+  html[dir="rtl"] .faq-answer,
+  html[dir="rtl"] .faq-body,
+  html[dir="ltr"] .faq-answer,
+  html[dir="ltr"] .faq-body {
+    padding: 12px 18px 18px 18px;
+    font-size: 0.9rem;
+    line-height: 1.85;
+  }
+
+  .community-card {
+    padding: 24px 18px;
+  }
+
+  .service-card-body {
+    padding: 18px 16px 20px 16px;
+  }
+
   .wa-floating-btn {
     bottom: 20px;
     right: 20px;
@@ -3277,5 +3551,31 @@ html[dir="rtl"] .wa-floating-btn {
   html[dir="rtl"] .wa-floating-btn {
     left: 20px;
     right: auto;
+  }
+}
+
+/* Extra Small Devices (<= 380px) */
+@media (max-width: 380px) {
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .code-block {
+    padding: 10px 10px;
+    font-size: 0.68rem;
+  }
+
+  .card-footer-stats {
+    padding: 8px 10px;
+  }
+
+  .card-footer-stats .stat-pill {
+    font-size: 0.68rem;
+    padding: 3px 8px;
+  }
+
+  .logo-title {
+    font-size: 0.92rem;
   }
 }
