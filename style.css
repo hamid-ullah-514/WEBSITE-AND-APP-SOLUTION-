@@ -845,9 +845,12 @@ html[dir="ltr"] .sound-wave {
   color: var(--primary-color);
 }
 
-/* Drawer headers/footers (only visible on mobile drawer) */
-.mobile-drawer-header, .mobile-drawer-footer {
-  display: none;
+/* Mobile Drawer, Overlay, Headers & Footers: 100% Hidden on Desktop Screens */
+.mobile-drawer,
+.mobile-nav-overlay,
+.mobile-drawer-header,
+.mobile-drawer-footer {
+  display: none !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -2894,7 +2897,7 @@ html[dir="rtl"] .wa-floating-btn {
 
   /* Full Screen Backdrop Blur Overlay (Root Stacking Context) */
   .mobile-nav-overlay {
-    display: block;
+    display: block !important;
     position: fixed;
     top: 0;
     left: 0;
@@ -2919,7 +2922,7 @@ html[dir="rtl"] .wa-floating-btn {
 
   /* Standalone Root Offcanvas Drawer (Never squeezed by flex, never pushed by page) */
   .mobile-drawer {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     justify-content: flex-start;
     position: fixed;
@@ -2965,7 +2968,7 @@ html[dir="rtl"] .wa-floating-btn {
   }
 
   .mobile-drawer-header {
-    display: flex;
+    display: flex !important;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -3037,7 +3040,7 @@ html[dir="rtl"] .wa-floating-btn {
   }
 
   .mobile-drawer-footer {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     gap: 14px;
     width: 100%;
